@@ -1,4 +1,4 @@
-# pyOpenSci Python Open Source Package Development Guide  
+# pyOpenSci Python Package Development Guide  
 
 <!-- Github community standards 
 https://github.com/pyOpenSci/python-package-guide/community -->
@@ -127,6 +127,7 @@ package-structure-code/code-structure-style
 package-structure-code/release
 package-structure-code/overview
 package-structure-code/collaboration
+package-structure-code/testing-ci
 ```
 
 ```{toctree}
