@@ -1,9 +1,9 @@
-# Releasing a package
-
-🚧 UNDER CONSTRUCTION - THIS CONTENT SHOULD BE FURTHER DEVELOPED BY THE END OF 2022! KEEP CHECKING BACK TO UPDATES AS THEY ARE IN PROGRESS🚧
+# Publish Your Python Package in a Community Channel
 
 
-This section covers releasing your package to PyPI as well as releasing future versions. Your package should have different versions over time: snapshots of a state of the package that you can release to PyPI for instance. These versions should be properly _numbered_, _released_ and _described in a NEWS file_. More details below.
+
+
+## maybe also have a page in creating an installable package
 
 
 ## Original Release
@@ -18,17 +18,7 @@ python setup.py register
 
 When you update your package, you release a new version to PyPI. Fortunately, this is easy! First, we'll talk about the metadata you'll need to update for each version. Then we'll cover how to release your updated version to PyPI [manually via the command line](manual-release) or [automatically via Travis CI](travis-release).
 
-### Version Naming
 
-* We recommend that pyOpenSci packages use [semantic versioning](https://www.python.org/dev/peps/pep-0440/#semantic-versioning). In addition to the [PEP section on it](https://www.python.org/dev/peps/pep-0440/#semantic-versioning), [the semver website has more detail](https://semver.org/).
-
-* Versioning can be done using [bumpversion](https://github.com/peritus/bumpversion), e.g. for a minor update:
-
-```
-bumpversion minor
-```
-
-"minor" can be replaced with "major" or "patch" depending on the level of update.
 
 (history)=
 ### History/News/Changelog file

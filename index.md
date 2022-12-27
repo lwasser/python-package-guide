@@ -124,7 +124,8 @@ Contributing & license files <documentation/contributing>
 
 Intro <package-structure-code/intro>
 Code Style & Format <package-structure-code/code-structure-style>
-package-structure-code/release
+Python package structure <package-structure-code/python-package-structure>
+Package Versions <package-structure-code/python-package-versions>
 package-structure-code/overview
 package-structure-code/collaboration
 ```
