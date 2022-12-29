@@ -123,11 +123,13 @@ Contributing & license files <documentation/contributing>
 :caption: Package structure & code style
 
 Intro <package-structure-code/intro>
-Code Style & Format <package-structure-code/code-structure-style>
+
 Python package structure <package-structure-code/python-package-structure>
+Package Build Tools <package-structure-code/python-package-build-tools>
 Package Versions <package-structure-code/python-package-versions>
 package-structure-code/overview
 package-structure-code/collaboration
+Code Style & Format <package-structure-code/code-structure-style>
 ```
 
 
