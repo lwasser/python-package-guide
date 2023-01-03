@@ -14,17 +14,20 @@ In this guide, we have made decisions around suggested standards and required
 standards, based upon the commonly used approaches in the scientific Python 
 community.  Our goal is to help standardize packaging across this ecosystem.
 
-In some cases: 
+In some cases the suggestions here may diverge from those in the non-scientific parts of the Python ecosystem. 
 
-* The suggestions here may diverse from those in the non-scientific parts of the Python ecosystem. 
-* The suggestions here are made with the intent of being helpful, but are not specific requirements for your package to be reviewed and accepted into our ecosystem!
+```{note}
+The suggestions for package layout in this section are made with the 
+intent of being helpful; they are not specific requirements for your 
+package to be reviewed and accepted into our ecosystem.
+```
 
 In all cases, we try to align our suggestions with the most current, accepted
 [PEP's (Python Enhancement Protocols)](https://peps.python.org/pep-0000/) and the [scientific-python community specs](https://scientific-python.org/specs/). 
 
 ```{note}
 Have a look at the 
-bare-minimum [editor checks.](open-source-software-submissions/editor-in-chief-guide.html#editor-checklist-copy-template-below-to-use-in-the-issue) that pyOpenSci
+bare-minimum [editor checks](https://www.pyopensci.org/peer-review-guide/software-peer-review-guide/editor-in-chief-guide.html#editor-checklist-template) that pyOpenSci
 performs before a review begins. These checks are useful to explore 
 for both authors planning to submit a package to us for review and for 
 anyone who is just getting started with creating a Python package. 
