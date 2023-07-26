@@ -23,11 +23,14 @@
 <meta property="og:url" content="package-structure-code/pyproject-toml-python-package-metadata.html" />
 <meta property="og:site_name" content="python-package-guide" />
 <meta property="og:description" content="The standard file that Python packages use to specify build requirements and metadata is called a pyproject.toml. Adding metadata, build requirements and package dependencies to a pyproject.toml fi..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
 <meta property="og:image" content="/_images/social_previews/summary_package-structure-code_pyproject-toml-python-package-metadata_4fb05649.png" />
 <meta property="og:image:alt" content="The standard file that Python packages use to specify build requirements and metadata is called a pyproject.toml. Adding metadata, build requirements and pac..." />
 <meta name="description" content="The standard file that Python packages use to specify build requirements and metadata is called a pyproject.toml. Adding metadata, build requirements and package dependencies to a pyproject.toml fi..." />
+<meta name="twitter:card" content="summary_large_image" />
 
-    <title>Use a pyproject.toml file for your package configuration &amp; metadata &#8212; pyOpenSci Python Packaging Guide</title>
+    <title>Use a pyproject.toml file for your package configuration &amp; metadata &#8212; Python Packaging Guide</title>
   
   
   
@@ -37,12 +40,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -50,12 +53,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -126,7 +129,7 @@
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">🚧 This guide is currently under heavy construction 🚧 </div>
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/software-peer-review/about/intro.html'>Submit Your Python Package for Peer Review - Learn More!</a></p>🚧 This guide is currently being developed! 🚧 </div>
   </div>
 
   
@@ -151,8 +154,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>`);</script>
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
   
   
     <p class="title logo__title">Python Package Guide</p>
@@ -195,6 +198,74 @@
                       </a>
                     </li>
                 
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation Overview
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/write-user-documentation/intro.html">
+                        Write User Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/repository-files/intro.html">
+                        Core GitHub Repository Files
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/hosting-tools/intro.html">
+                        Documentation Tools & Hosting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="python-package-versions.html">
+                        Manage Package Versions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
+                        Publish Package PyPI Conda
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="code-style-linting-format.html">
+                        Code Style & Format
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../python-packaging/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
 
                 <li class="nav-item">
                   <a class="nav-link nav-external" href="https://www.pyopensci.org">
@@ -202,15 +273,10 @@
                   </a>
                 </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org/python-package-guide">
-                    Python Packaging Guide
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
                   </a>
                 </li>
                 
@@ -361,6 +427,74 @@ document.write(`
                       </a>
                     </li>
                 
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation Overview
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/write-user-documentation/intro.html">
+                        Write User Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/repository-files/intro.html">
+                        Core GitHub Repository Files
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/hosting-tools/intro.html">
+                        Documentation Tools & Hosting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="python-package-versions.html">
+                        Manage Package Versions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
+                        Publish Package PyPI Conda
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="code-style-linting-format.html">
+                        Code Style & Format
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../python-packaging/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
 
                 <li class="nav-item">
                   <a class="nav-link nav-external" href="https://www.pyopensci.org">
@@ -368,15 +502,10 @@ document.write(`
                   </a>
                 </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org/python-package-guide">
-                    Python Packaging Guide
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
                   </a>
                 </li>
                 
@@ -466,6 +595,12 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">What are SDist &amp; Wheel Files?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publishing a package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">Package versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish</a></li>
 </ul>
 </div>
 </nav></div>
@@ -557,19 +692,24 @@ package setup uses:</p>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">]</span>
 <span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pdm-backend&gt;=1.0.0&quot;</span><span class="p">]</span>
-<span class="n">build</span><span class="o">-</span><span class="n">back</span><span class="o">-</span><span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;pdm.backend&quot;</span>
+<span class="n">build</span><span class="o">-</span><span class="n">backend</span> <span class="o">=</span> <span class="s2">&quot;pdm.backend&quot;</span>
 
 <span class="p">[</span><span class="n">project</span><span class="p">]</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;examplePy&quot;</span>
 <span class="n">authors</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span> <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span> <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">},</span>
 <span class="p">]</span>
-<span class="n">maintainers</span> <span class="o">=</span> <span class="p">[{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;All the contributors&quot;</span><span class="p">}]</span>
-<span class="n">license</span> <span class="o">=</span> <span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;BSD 3-Clause&quot;</span><span class="p">}</span>
+<span class="n">maintainers</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;All the contributors&quot;</span><span class="p">},</span>
+<span class="p">]</span>
 <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;An example Python package used to support Python packaging tutorials&quot;</span>
 <span class="n">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pyOpenSci&quot;</span><span class="p">,</span> <span class="s2">&quot;python packaging&quot;</span><span class="p">]</span>
 <span class="n">readme</span> <span class="o">=</span> <span class="s2">&quot;README.md&quot;</span>
-
+<span class="n">classifiers</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;License :: OSI Approved :: BSD License&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 <span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;dependency-package-name-1&quot;</span><span class="p">,</span>
     <span class="s2">&quot;dependency-package-name-2&quot;</span><span class="p">,</span>
@@ -589,26 +729,31 @@ Notice how simple it is to swap out the tools needed to build this package!</p>
 <li><p><strong>setuptools_scm</strong> to manage package version updates using version control tags</p></li>
 </ul>
 <p>In the example below <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> is the first table
-of values. It has two keys that specify the build front end and back-end for a package:</p>
+of values. It has two keys that specify the build backend API and containing package:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build-back-end</span> <span class="pre">=</span></code></p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">]</span>
-<span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;setuptools&gt;=45&quot;</span><span class="p">]</span>
-<span class="n">build</span><span class="o">-</span><span class="n">back</span><span class="o">-</span><span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;setuptools.build_meta&quot;</span>
+<span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;setuptools&gt;=61&quot;</span><span class="p">]</span>
+<span class="n">build</span><span class="o">-</span><span class="n">backend</span> <span class="o">=</span> <span class="s2">&quot;setuptools.build_meta&quot;</span>
 
 <span class="p">[</span><span class="n">project</span><span class="p">]</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;examplePy&quot;</span>
 <span class="n">authors</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span> <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span> <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">},</span>
 <span class="p">]</span>
-<span class="n">maintainers</span> <span class="o">=</span> <span class="p">[{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;All the contributors&quot;</span><span class="p">}]</span>
-<span class="n">license</span> <span class="o">=</span> <span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;BSD 3-Clause&quot;</span><span class="p">}</span>
+<span class="n">maintainers</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;All the contributors&quot;</span><span class="p">},</span>
+<span class="p">]</span>
 <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;An example Python package used to support Python packaging tutorials&quot;</span>
 <span class="n">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pyOpenSci&quot;</span><span class="p">,</span> <span class="s2">&quot;python packaging&quot;</span><span class="p">]</span>
 <span class="n">readme</span> <span class="o">=</span> <span class="s2">&quot;README.md&quot;</span>
-
+<span class="n">classifiers</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;License :: OSI Approved :: BSD License&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 <span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;dependency-package-name-1&quot;</span><span class="p">,</span>
     <span class="s2">&quot;dependency-package-name-2&quot;</span><span class="p">,</span>
@@ -628,7 +773,10 @@ of values. It has two keys that specify the build front end and back-end for a p
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="python-package-structure.html"
@@ -648,7 +796,10 @@ of values. It has two keys that specify the build front end and back-end for a p
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -697,7 +848,7 @@ of values. It has two keys that specify the build front end and back-end for a p
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner"></div>
+            
           </footer>
         
       </main>
@@ -705,8 +856,8 @@ of values. It has two keys that specify the build front end and back-end for a p
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -728,7 +879,7 @@ of values. It has two keys that specify the build front end and back-end for a p
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
 </p></div>
       
     </div>

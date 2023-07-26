@@ -23,11 +23,14 @@
 <meta property="og:url" content="package-structure-code/intro.html" />
 <meta property="og:site_name" content="python-package-guide" />
 <meta property="og:description" content="This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to support building and publishing your packa..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
 <meta property="og:image" content="/_images/social_previews/summary_package-structure-code_intro_3894ec6c.png" />
 <meta property="og:image:alt" content="This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to su..." />
 <meta name="description" content="This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to support building and publishing your packa..." />
+<meta name="twitter:card" content="summary_large_image" />
 
-    <title>Python package structure information &#8212; pyOpenSci Python Packaging Guide</title>
+    <title>Python package structure information &#8212; Python Packaging Guide</title>
   
   
   
@@ -37,12 +40,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -50,12 +53,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -126,7 +129,7 @@
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">🚧 This guide is currently under heavy construction 🚧 </div>
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/software-peer-review/about/intro.html'>Submit Your Python Package for Peer Review - Learn More!</a></p>🚧 This guide is currently being developed! 🚧 </div>
   </div>
 
   
@@ -151,8 +154,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>`);</script>
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
   
   
     <p class="title logo__title">Python Package Guide</p>
@@ -195,6 +198,74 @@
                       </a>
                     </li>
                 
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation Overview
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/write-user-documentation/intro.html">
+                        Write User Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/repository-files/intro.html">
+                        Core GitHub Repository Files
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/hosting-tools/intro.html">
+                        Documentation Tools & Hosting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="python-package-versions.html">
+                        Manage Package Versions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
+                        Publish Package PyPI Conda
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="code-style-linting-format.html">
+                        Code Style & Format
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../python-packaging/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
 
                 <li class="nav-item">
                   <a class="nav-link nav-external" href="https://www.pyopensci.org">
@@ -202,15 +273,10 @@
                   </a>
                 </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org/python-package-guide">
-                    Python Packaging Guide
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
                   </a>
                 </li>
                 
@@ -361,6 +427,74 @@ document.write(`
                       </a>
                     </li>
                 
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation Overview
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/write-user-documentation/intro.html">
+                        Write User Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/repository-files/intro.html">
+                        Core GitHub Repository Files
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/hosting-tools/intro.html">
+                        Documentation Tools & Hosting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="python-package-versions.html">
+                        Manage Package Versions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
+                        Publish Package PyPI Conda
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="code-style-linting-format.html">
+                        Code Style & Format
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../python-packaging/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
 
                 <li class="nav-item">
                   <a class="nav-link nav-external" href="https://www.pyopensci.org">
@@ -368,15 +502,10 @@ document.write(`
                   </a>
                 </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org/python-package-guide">
-                    Python Packaging Guide
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
                   </a>
                 </li>
                 
@@ -467,6 +596,12 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publishing a package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">Package versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish</a></li>
+</ul>
 </div>
 </nav></div>
     </div>
@@ -522,36 +657,45 @@ document.write(`
                   
   <section id="python-package-structure-information">
 <h1>Python package structure information<a class="headerlink" href="#python-package-structure-information" title="Permalink to this heading">#</a></h1>
-<p>This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to
+<p>This section provides guidance on your Python package’s structure, code formats
+and style. It also reviews the various packaging tools that you can use to
 support building and publishing your package.</p>
-<p>If you are confused by Python packaging, you are not alone!
-The good news is there are some great modern packaging
-tools that ensure that you’re following best practices. Here, we
-review tool features and suggest tools that might be best fitted for your workflow.</p>
+<p>If you are confused by Python packaging, you are not alone! The good news is
+there are some great modern packaging tools that ensure that you’re following
+best practices. Here, we review tool features and suggest tools that might be
+best fitted for your workflow.</p>
 <figure class="align-default" id="fig-target">
-<a class="reference internal image-reference" href="../_images/python-package-tools-decision-tree.png"><img alt="Figure showing a decision tree with the various packaging tool front end and back end options." src="../_images/python-package-tools-decision-tree.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-package-tools-decision-tree.png"><img alt="Figure showing a decision tree with the various packaging tool front-end and back-end options." src="../_images/python-package-tools-decision-tree.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-text">Diagram showing the various from end build tools that you can select from. See the packaging tools page to learn more about each tool.</span><a class="headerlink" href="#fig-target" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Diagram showing the various front-end build tools that you can select from.
+See the packaging tools page to learn more about each tool.</span><a class="headerlink" href="#fig-target" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you are considering submitting a package for peer review, have a look at the
-bare-minimum <a class="reference external" href="https://www.pyopensci.org/software-peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template">editor checks</a> that pyOpenSci
-performs before a review begins. These checks are useful to explore
-for both authors planning to submit a package to us for review and for
-anyone who is just getting started with creating a Python package.</p>
+<p>If you are considering submitting a package for peer review, have a look
+at the bare-minimum <a class="reference external" href="https://www.pyopensci.org/software-peer-review/how-to/editor-in-chief-guide.html#editor-checklist-template">editor checks</a>
+that pyOpenSci performs before a review begins. These checks are useful
+to explore for both authors planning to submit a package to us for review
+and for anyone who is just getting started with creating a Python package.</p>
 </div>
 <section id="what-you-will-learn-here">
 <h2>What you will learn here<a class="headerlink" href="#what-you-will-learn-here" title="Permalink to this heading">#</a></h2>
 <p>In this section of our Python packaging guide, we:</p>
 <ul class="simple">
-<li><p>Provide an overview of the options available to you when packaging your tool</p></li>
-<li><p>Suggest tools and approaches that both meet your needs and also support existing standards.</p></li>
-<li><p>Suggest tools and approaches that will allow you to expand upon a workflow that may begin as a pure Python tool and evolve into a tool that requires addition layers of complexity in the packaging build.</p></li>
+<li><p>Provide an overview of the options available to you when packaging your
+tool.</p></li>
+<li><p>Suggest tools and approaches that both meet your needs and also support
+existing standards.</p></li>
+<li><p>Suggest tools and approaches that will allow you to expand upon a workflow
+that may begin as a pure Python tool and evolve into a tool that requires
+addition layers of complexity in the packaging build.</p></li>
 <li><p>Align our suggestions with the most current, accepted
-<a class="reference external" href="https://peps.python.org/pep-0000/">PEPs (Python Enhancement Protocols)</a> and the <a class="reference external" href="https://scientific-python.org/specs/">scientific-python community SPECs</a>.</p></li>
-<li><p>In an effort to maintain consistency within our community, we also align with existing best practices being implemented by developers of core Scientific Python packages such as Numpy, SciPy and others.</p></li>
+<a class="reference external" href="https://peps.python.org/pep-0000/">PEPs (Python Enhancement Protocols)</a>
+and the <a class="reference external" href="https://scientific-python.org/specs/">Scientific Python community SPECs</a>.</p></li>
+<li><p>In an effort to maintain consistency within our community, we also align
+with existing best practices being implemented by developers of core
+Scientific Python packages such as Numpy, SciPy and others.</p></li>
 </ul>
 </section>
 <section id="guidelines-for-pyopensci-s-packaging-recommendations">
@@ -559,17 +703,20 @@ anyone who is just getting started with creating a Python package.</p>
 <!-- Might belong on the LANDING page for this entire guide?-->
 <p>The flexibility of the Python programming language lends itself to a diverse
 range of tool options for creating a Python package. Python is so flexible that
-it is one of the few languages that can be used to wrap around other languages. The ability of Python to wrap other languages one the reasons why you will often hear Python described as a <a class="reference external" href="https://numpy.org/doc/stable/user/c-info.python-as-glue.html">“glue” language</a>”</p>
+it is one of the few languages that can be used to wrap around other languages.
+The ability of Python to wrap other languages is one the reasons you will often
+hear Python described as a <a class="reference external" href="https://numpy.org/doc/stable/user/c-info.python-as-glue.html">“glue” language</a>”</p>
 <p>If you are building a pure Python package, then your packaging setup can be
 simple. However, some scientific packages have complex requirements as they may
 need to support extensions or tools written in other languages such as C or C++.</p>
 <p>To support the many different uses of Python, there are many ways to create a
-Python package. In this guide, we suggest approaches for packaging approaches and tools based
-upon:</p>
+Python package. In this guide, we suggest packaging approaches and tools based on:</p>
 <ol class="arabic simple">
-<li><p>What we think will be best and easiest to adopt for those who are newer to packaging</p></li>
+<li><p>What we think will be best and easiest to adopt for those who are newer to
+packaging.</p></li>
 <li><p>Tools that we think are well maintained and documented.</p></li>
-<li><p>A shared goal of standardizing packaging approaches across this (scientific) Python ecosystem.</p></li>
+<li><p>A shared goal of standardizing packaging approaches across this (scientific)
+Python ecosystem.</p></li>
 </ol>
 <p>Here, we also try to align our suggestions with the most current, accepted
 <a class="reference external" href="https://packaging.python.org/en/latest/">Python community</a> and <a class="reference external" href="https://scientific-python.org/specs/">scientific community</a>.</p>
@@ -578,7 +725,11 @@ upon:</p>
 <p>The suggestions for package layout in this section are made with the
 intent of being helpful; they are not specific requirements for your
 package to be reviewed and accepted into our pyOpenSci open source ecosystem.</p>
-<p>Please check out our <a class="reference external" href="https://www.pyopensci.org/software-peer-review/about/package-scope.html">package scope page</a> and <a class="reference external" href="https://www.pyopensci.org/software-peer-review/how-to/author-guide.html#">review requirements in our author guide</a> if you are looking for pyOpenSci’s Python package review requirements!</p>
+<p>Please check out our <a class="reference external" href="https://www.pyopensci.org/software-peer-review/about/package-scope.html">package scope page</a>
+and <a class="reference external" href="https://www.pyopensci.org/software-peer-review/how-to/author-guide.html#">review requirements in our author guide</a>
+if you are looking for pyOpenSci’s Python package review requirements!</p>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -591,7 +742,10 @@ package to be reviewed and accepted into our pyOpenSci open source ecosystem.</p
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../documentation/hosting-tools/website-hosting-optimizing-your-docs.html"
@@ -611,7 +765,10 @@ package to be reviewed and accepted into our pyOpenSci open source ecosystem.</p
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -627,7 +784,9 @@ package to be reviewed and accepted into our pyOpenSci open source ecosystem.</p
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-learn-here">What you will learn here</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines-for-pyopensci-s-packaging-recommendations">Guidelines for pyOpenSci’s packaging recommendations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines-for-pyopensci-s-packaging-recommendations">Guidelines for pyOpenSci’s packaging recommendations</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -659,7 +818,7 @@ package to be reviewed and accepted into our pyOpenSci open source ecosystem.</p
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner"></div>
+            
           </footer>
         
       </main>
@@ -667,8 +826,8 @@ package to be reviewed and accepted into our pyOpenSci open source ecosystem.</p
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -690,7 +849,7 @@ package to be reviewed and accepted into our pyOpenSci open source ecosystem.</p
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
 </p></div>
       
     </div>

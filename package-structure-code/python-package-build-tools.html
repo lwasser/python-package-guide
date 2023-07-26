@@ -23,11 +23,14 @@
 <meta property="og:url" content="package-structure-code/python-package-build-tools.html" />
 <meta property="og:site_name" content="python-package-guide" />
 <meta property="og:description" content="There are a several different build tools that you can use to create your Python package’s sdist and wheel distributions. Below, we discuss the features, benefits and limitations of the most common..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
 <meta property="og:image" content="/_images/social_previews/summary_package-structure-code_python-package-build-tools_e4008c3a.png" />
 <meta property="og:image:alt" content="There are a several different build tools that you can use to create your Python package’s sdist and wheel distributions. Below, we discuss the features, ben..." />
 <meta name="description" content="There are a several different build tools that you can use to create your Python package’s sdist and wheel distributions. Below, we discuss the features, benefits and limitations of the most common..." />
+<meta name="twitter:card" content="summary_large_image" />
 
-    <title>Python Package Build Tools &#8212; pyOpenSci Python Packaging Guide</title>
+    <title>Python Package Build Tools &#8212; Python Packaging Guide</title>
   
   
   
@@ -37,12 +40,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -50,12 +53,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -126,7 +129,7 @@
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">🚧 This guide is currently under heavy construction 🚧 </div>
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/software-peer-review/about/intro.html'>Submit Your Python Package for Peer Review - Learn More!</a></p>🚧 This guide is currently being developed! 🚧 </div>
   </div>
 
   
@@ -151,8 +154,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is blue and yellow following the Python logo"/>`);</script>
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
   
   
     <p class="title logo__title">Python Package Guide</p>
@@ -195,6 +198,74 @@
                       </a>
                     </li>
                 
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation Overview
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/write-user-documentation/intro.html">
+                        Write User Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/repository-files/intro.html">
+                        Core GitHub Repository Files
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/hosting-tools/intro.html">
+                        Documentation Tools & Hosting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="python-package-versions.html">
+                        Manage Package Versions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
+                        Publish Package PyPI Conda
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="code-style-linting-format.html">
+                        Code Style & Format
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../python-packaging/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
 
                 <li class="nav-item">
                   <a class="nav-link nav-external" href="https://www.pyopensci.org">
@@ -202,15 +273,10 @@
                   </a>
                 </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org/python-package-guide">
-                    Python Packaging Guide
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
                   </a>
                 </li>
                 
@@ -361,6 +427,74 @@ document.write(`
                       </a>
                     </li>
                 
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/index.html">
+                        Documentation Overview
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/write-user-documentation/intro.html">
+                        Write User Documentation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/repository-files/intro.html">
+                        Core GitHub Repository Files
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../documentation/hosting-tools/intro.html">
+                        Documentation Tools & Hosting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="python-package-versions.html">
+                        Manage Package Versions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
+                        Publish Package PyPI Conda
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="code-style-linting-format.html">
+                        Code Style & Format
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../python-packaging/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
+                        Intro
+                      </a>
+                    </li>
+                
 
                 <li class="nav-item">
                   <a class="nav-link nav-external" href="https://www.pyopensci.org">
@@ -368,15 +502,10 @@ document.write(`
                   </a>
                 </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
+
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org/python-package-guide">
-                    Python Packaging Guide
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
                   </a>
                 </li>
                 
@@ -466,6 +595,12 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">What are SDist &amp; Wheel Files?</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Package Build Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publishing a package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">Package versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish</a></li>
 </ul>
 </div>
 </nav></div>
@@ -588,7 +723,7 @@ support pure-Python package builds. A pure-Python build refers
 to a package build that does not have extensions that are written in another
 programming language (such as <code class="docutils literal notranslate"><span class="pre">C</span></code> or <code class="docutils literal notranslate"><span class="pre">C++</span></code>).</p>
 <p>Other packages that have C and C++ extensions (or that wrap other languages such as fortran) require additional code compilation steps when built.
-Back-ends such as and <strong>setuptools.build</strong>, <strong>meson.build</strong>
+Back-ends such as <strong>setuptools.build</strong>, <strong>meson.build</strong>
 and <strong>scikit-build</strong> support complex builds with custom steps. If your
 build is particularly complex (i.e. you have more than a few <code class="docutils literal notranslate"><span class="pre">C</span></code>/<code class="docutils literal notranslate"><span class="pre">C++</span></code>
 extensions), then we suggest you use <strong>meson.build</strong> or <strong>scikit-build</strong>.</p>
@@ -598,7 +733,7 @@ extensions), then we suggest you use <strong>meson.build</strong> or <strong>sci
 <p>A packaging front-end tool refers to a tool that makes it easier for you to
 perform common packaging tasks using similar commands. These tasks include:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">Build your packages (create the sdist and wheel distributions</span></a></p></li>
+<li><p><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">Build your packages (create the sdist and wheel distributions)</span></a></p></li>
 <li><p>Installing your package in a development mode (so it updates when you update your code)</p></li>
 <li><p>Publishing to PyPI</p></li>
 <li><p>Running tests</p></li>
@@ -863,10 +998,6 @@ packages them with the pure Python files.</p>
 <td><p>✅</p></td>
 <td><p>Similar to all of the other tools PDM builds your packages sdist and wheel files for you.</p></td>
 </tr>
-<tr class="row-odd"><td><p>✨Optional use of PEP 582 / local environment directory✨</p></td>
-<td><p>✅</p></td>
-<td><p>PDM is currently the only tool that optionally supports PEP 582 (having a local environment configuration stored within a <code class="docutils literal notranslate"><span class="pre">__pypackages__</span></code> directory in your working directory).</p></td>
-</tr>
 </tbody>
 </table>
 <div class="admonition-pdm-vs-poetry admonition">
@@ -1123,7 +1254,7 @@ is currently undocumented. Thus, we don’t recommend using Poetry for more comp
 <p>Some challenges of Poetry include:</p>
 <ul class="simple">
 <li><p>Poetry, by default, pins dependencies using an “upper bound” limit specified with the <code class="docutils literal notranslate"><span class="pre">^</span></code> symbol by default. However, this behavior can be over-written by specifying the dependency when you use <code class="docutils literal notranslate"><span class="pre">Poetry</span> <span class="pre">add</span></code> as follows: <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&quot;requests&gt;=2.1&quot;</span></code> See breakout below for more discussion on issues surrounding upper-bounds pinning.</p></li>
-<li><p><em>Minor Challenge:</em> The way Poetry currently adds metadata to your pyproject.toml file does not does not follow current Python standards. However, this is going to be addressed with Poetry release version 2.0.</p></li>
+<li><p><em>Minor Challenge:</em> The way Poetry currently adds metadata to your pyproject.toml file does not follow current Python standards. However, this is going to be addressed with Poetry release version 2.0.</p></li>
 </ul>
 <p>Poetry is an excellent tool. Use caution when using it to pin dependencies as
 Poetry’s approach to pinning can be problematic for many builds. If you use Poetry, we strongly suggest that you override the default upper bound dependency option.</p>
@@ -1132,7 +1263,7 @@ discusses the slight differences in how poetry adds deps....-->
 <div class="important admonition">
 <p class="admonition-title">Challenges with Poetry dependency pinning</p>
 <p>By default, Poetry pins dependencies using <code class="docutils literal notranslate"><span class="pre">^</span></code> by default. This <code class="docutils literal notranslate"><span class="pre">^</span></code> symbol means that there is
-an “upper bound” to the dependency. Thus poetry will bump a dependency
+an “upper bound” to the dependency. Thus poetry won’t bump a dependency
 version to a new major version. Thus, if your package uses a dependency that
 is at version 1.2.3, Poetry will never bump the dependency to 2.0 even if
 there is a new major version of the package. Poetry will instead bump up to 1.9.x.</p>
@@ -1185,8 +1316,8 @@ standards.</p></li>
 when using setuptools. For instance:</p>
 <ul class="simple">
 <li><p>setuptools will build a project without a name or version if you are not using a <strong>pyproject.toml</strong> file
-to store metadata.
-*Setuptools also will include all of the files in your package
+to store metadata.</p></li>
+<li><p>setuptools also will include all of the files in your package
 repository if you do not explicitly tell it to exclude files using a
 <strong>MANIFEST.in</strong> file</p></li>
 </ul>
@@ -1200,7 +1331,10 @@ repository if you do not explicitly tell it to exclude files using a
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="python-package-distribution-files-sdist-wheel.html"
@@ -1220,7 +1354,10 @@ repository if you do not explicitly tell it to exclude files using a
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1309,7 +1446,7 @@ repository if you do not explicitly tell it to exclude files using a
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner"></div>
+            
           </footer>
         
       </main>
@@ -1317,8 +1454,8 @@ repository if you do not explicitly tell it to exclude files using a
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1340,7 +1477,7 @@ repository if you do not explicitly tell it to exclude files using a
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
 </p></div>
       
     </div>

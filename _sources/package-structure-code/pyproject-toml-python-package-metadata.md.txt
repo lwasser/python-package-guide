@@ -39,19 +39,24 @@ package setup uses:
 ```
 [build-system]
 requires = ["pdm-backend>=1.0.0"]
-build-back-end = "pdm.backend"
+build-backend = "pdm.backend"
 
 [project]
 name = "examplePy"
 authors = [
-    {name = "Some Maintainer", email = "some-email@pyopensci.org"}
+    {name = "Some Maintainer", email = "some-email@pyopensci.org"},
 ]
-maintainers = [{name = "All the contributors"}]
-license = {text = "BSD 3-Clause"}
+maintainers = [
+    {name = "All the contributors"},
+]
 description = "An example Python package used to support Python packaging tutorials"
 keywords = ["pyOpenSci", "python packaging"]
 readme = "README.md"
-
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+]
 dependencies = [
     "dependency-package-name-1",
     "dependency-package-name-2",
@@ -72,27 +77,32 @@ In this example package setup you use:
 - **setuptools_scm** to manage package version updates using version control tags
 
 In the example below `[build-system]` is the first table
-of values. It has two keys that specify the build front end and back-end for a package:
+of values. It has two keys that specify the build backend API and containing package:
 
 1. `requires =`
 1. `build-back-end =`
 
 ```
 [build-system]
-requires = ["setuptools>=45"]
-build-back-end = "setuptools.build_meta"
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "examplePy"
 authors = [
-    {name = "Some Maintainer", email = "some-email@pyopensci.org"}
+    {name = "Some Maintainer", email = "some-email@pyopensci.org"},
 ]
-maintainers = [{name = "All the contributors"}]
-license = {text = "BSD 3-Clause"}
+maintainers = [
+    {name = "All the contributors"},
+]
 description = "An example Python package used to support Python packaging tutorials"
 keywords = ["pyOpenSci", "python packaging"]
 readme = "README.md"
-
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+]
 dependencies = [
     "dependency-package-name-1",
     "dependency-package-name-2",
