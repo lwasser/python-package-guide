@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
         <script>
@@ -23,12 +22,7 @@
 <meta property="og:url" content="package-structure-code/code-style-linting-format.html" />
 <meta property="og:site_name" content="python-package-guide" />
 <meta property="og:description" content="Consistent code format and style is useful to both your package and across the scientific Python ecosystem because using similar formats makes code easier to read. For instance, if you saw a senten..." />
-<meta property="og:image:width" content="1146" />
-<meta property="og:image:height" content="600" />
-<meta property="og:image" content="/_images/social_previews/summary_package-structure-code_code-style-linting-format_a195a5b9.png" />
-<meta property="og:image:alt" content="Consistent code format and style is useful to both your package and across the scientific Python ecosystem because using similar formats makes code easier to..." />
 <meta name="description" content="Consistent code format and style is useful to both your package and across the scientific Python ecosystem because using similar formats makes code easier to read. For instance, if you saw a senten..." />
-<meta name="twitter:card" content="summary_large_image" />
 
     <title>Python Package Code Style, Format and Linters &#8212; Python Packaging Guide</title>
   
@@ -40,35 +34,33 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=dab19a8a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -76,12 +68,18 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/code-style-linting-format';</script>
-    <script src="../_static/matomo.js"></script>
+    <script src="../_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/package-structure-code/code-style-linting-format.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud" href="publish-python-package-pypi-conda.html" />
+    <link rel="next" title="CI and Testing - Coming Soon!" href="../ci-and-testing/intro.html" />
     <link rel="prev" title="Creating New Versions of Your Python Package" href="python-package-versions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -93,6 +91,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -139,12 +146,14 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
 
 <a class="navbar-brand logo" href="../index.html">
+  
   
   
   
@@ -163,7 +172,6 @@
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -198,97 +206,34 @@
                       </a>
                     </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
-                <div class="dropdown-menu">
+                <ul id="pst-nav-more-links" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../documentation/index.html">
-                        Documentation Overview
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../documentation/write-user-documentation/intro.html">
-                        Write User Documentation
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../documentation/repository-files/intro.html">
-                        Core GitHub Repository Files
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../documentation/hosting-tools/intro.html">
-                        Documentation Tools & Hosting
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="python-package-versions.html">
-                        Manage Package Versions
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
-                        Publish Package PyPI Conda
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="#">
-                        Code Style & Format
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../python-packaging/intro.html">
-                        Intro
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
-                        Intro
-                      </a>
-                    </li>
-                
-
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
                     pyOpenSci Website
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
                     Peer Review Guide
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://pyopensci.org/governance">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
                     Governance
                   </a>
                 </li>
                 
-                </div>
-            </div>
+                </ul>
+            </li>
             
   </ul>
 </nav></div>
@@ -300,23 +245,25 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -332,8 +279,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -344,8 +291,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
         <li class="nav-item">
           
@@ -356,8 +303,8 @@ document.write(`
           
           
           
-          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
-            <label class="sr-only">Mastodon</label></a>
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
         </li>
 </ul></div>
       
@@ -367,18 +314,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -427,97 +376,34 @@ document.write(`
                       </a>
                     </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
-                <div class="dropdown-menu">
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../documentation/index.html">
-                        Documentation Overview
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../documentation/write-user-documentation/intro.html">
-                        Write User Documentation
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../documentation/repository-files/intro.html">
-                        Core GitHub Repository Files
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../documentation/hosting-tools/intro.html">
-                        Documentation Tools & Hosting
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="python-package-versions.html">
-                        Manage Package Versions
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="publish-python-package-pypi-conda.html">
-                        Publish Package PyPI Conda
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="#">
-                        Code Style & Format
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../python-packaging/intro.html">
-                        Intro
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../ci-and-testing/intro.html">
-                        Intro
-                      </a>
-                    </li>
-                
-
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
                     pyOpenSci Website
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
                     Peer Review Guide
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://pyopensci.org/governance">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
                     Governance
                   </a>
                 </li>
                 
-                </div>
-            </div>
+                </ul>
+            </li>
             
   </ul>
 </nav></div>
@@ -531,10 +417,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -550,8 +436,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -562,8 +448,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
         <li class="nav-item">
           
@@ -574,8 +460,8 @@ document.write(`
           
           
           
-          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
-            <label class="sr-only">Mastodon</label></a>
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
         </li>
 </ul></div>
         
@@ -592,15 +478,15 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">What are SDist &amp; Wheel Files?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Publishing a package</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish with Conda / PyPI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">Package versions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Code style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish</a></li>
 </ul>
 </div>
 </nav></div>
@@ -630,8 +516,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../index.html" class="nav-link" aria-label="Home">
@@ -641,7 +527,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python package structure information</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Python Package Code Style, Format and Linters</li>
+    <li class="breadcrumb-item active" aria-current="page">Python...</li>
   </ul>
 </nav>
 </div>
@@ -659,17 +545,17 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="python-package-code-style-format-and-linters">
-<h1>Python Package Code Style, Format and Linters<a class="headerlink" href="#python-package-code-style-format-and-linters" title="Permalink to this heading">#</a></h1>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p class="rubric">Take Aways</p>
+<h1>Python Package Code Style, Format and Linters<a class="headerlink" href="#python-package-code-style-format-and-linters" title="Link to this heading">#</a></h1>
+<div class="admonition-take-aways admonition">
+<p class="admonition-title">Take Aways</p>
 <ul class="simple">
 <li><p>pyOpenSci requires authors to follow PEP 8 code format guidelines</p></li>
 <li><p>Setting up a code formatters like Black and isort will help you enforce PEP 8 style guidelines and also consistent, readable code format</p></li>
-<li><p>Some commonly used tools are: Black/Blue, Isort, flake8</p></li>
+<li><p>Some commonly used tools are: Black, Isort, flake8, Ruff</p></li>
 <li><p>You can also setup pre-commit hooks which will run code formatters locally
 each time you make a commit.</p></li>
 <li><p><a class="reference external" href="https://pre-commit.ci/">precommit.ci</a> is a bot that you can add to your GitHub repository. It will automagically apply code format to every PR using the tools specified in your pre-commit-config.yaml file. It can save significant time and make contributions easier for new contributors.</p></li>
+<li><p>Automation is good! By making code quality tools care of your code, you can focus on structural and high values tasks.</p></li>
 </ul>
 </div>
 <p>Consistent code format and style is useful to both your package
@@ -693,7 +579,7 @@ a discussion of:</p>
 format tools in daily workflows and in pull requests on GitHub easier.</p></li>
 </ol>
 <section id="use-a-code-format-tool-or-tools-to-make-your-life-easier">
-<h2>Use a code format tool (or tools) to make your life easier<a class="headerlink" href="#use-a-code-format-tool-or-tools-to-make-your-life-easier" title="Permalink to this heading">#</a></h2>
+<h2>Use a code format tool (or tools) to make your life easier<a class="headerlink" href="#use-a-code-format-tool-or-tools-to-make-your-life-easier" title="Link to this heading">#</a></h2>
 <p>We suggest that you use a code format tool, or a set of format tools, because
 manually applying all of the PEP 8 format specifications is time consuming
 for both maintainers and can be a road block for potential new contributors.
@@ -705,6 +591,7 @@ PEP 8 standards and applying consistent style decisions throughout.</p>
 <li><p>Ensure that format and style is consistent across your entire code-base.</p></li>
 <li><p>Avoid lengthy discussions with contributors and other
 maintainers about personalized code format preferences during reviews.</p></li>
+<li><p>Avoid pure visual edits in the code base so that code reviews focus on added value</p></li>
 </ul>
 <p>Many packages use a suite of tools to apply code format rules, taking
 the work out of manually implementing code format requirements.</p>
@@ -712,17 +599,17 @@ the work out of manually implementing code format requirements.</p>
 will also broadly make code easier to scan, understand and contribute to.</p>
 </section>
 <section id="linting-vs-format-and-style">
-<h2>Linting vs format and style<a class="headerlink" href="#linting-vs-format-and-style" title="Permalink to this heading">#</a></h2>
+<h2>Linting vs format and style<a class="headerlink" href="#linting-vs-format-and-style" title="Link to this heading">#</a></h2>
 <p>Before we dive in let’s get a few definitions out of the way.</p>
 <section id="code-linting">
-<h3>Code Linting<a class="headerlink" href="#code-linting" title="Permalink to this heading">#</a></h3>
+<h3>Code Linting<a class="headerlink" href="#code-linting" title="Link to this heading">#</a></h3>
 <p>A code linter is a tool that will review your code and
 identify errors or issues. A linter typically does not modify your code. It
 will tell you what the error is and on what line it was discovered. Flake8,
 discussed below, is an example of a commonly-used code linter.</p>
 </section>
 <section id="code-formatters-and-stylers">
-<h3>Code Formatters (and stylers)<a class="headerlink" href="#code-formatters-and-stylers" title="Permalink to this heading">#</a></h3>
+<h3>Code Formatters (and stylers)<a class="headerlink" href="#code-formatters-and-stylers" title="Link to this heading">#</a></h3>
 <p>Python focused code formatters often follow PEP 8 standards. However, they also
 make stylistic decisions about code consistency. Code formatters will
 reformat your code for you.</p>
@@ -733,31 +620,29 @@ quotes for strings, and spacing of items in lists.</p>
 </section>
 </section>
 <section id="code-format-and-style">
-<h2>Code format and style<a class="headerlink" href="#code-format-and-style" title="Permalink to this heading">#</a></h2>
-<section id="black-and-blue">
-<h3>Black and Blue<a class="headerlink" href="#black-and-blue" title="Permalink to this heading">#</a></h3>
-<p><a class="reference external" href="https://black.readthedocs.io/en/stable/">Black</a> and <a class="reference external" href="https://blue.readthedocs.io/en/latest/">Blue</a> (which wraps around Black) are code
-formatters. Both Black and Blue will automagically (and <em>unapologetically</em>)
+<h2>Code format and style<a class="headerlink" href="#code-format-and-style" title="Link to this heading">#</a></h2>
+<section id="black">
+<h3>Black<a class="headerlink" href="#black" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://black.readthedocs.io/en/stable/">Black</a> is a code
+formatter. Black will automagically (and <em>unapologetically</em>)
 fix spacing issues and ensure code format is consistent throughout your
-package. Black and Blue also generally adhere to PEP 8 style guidelines with
+package. Black also generally adhere to PEP 8 style guidelines with
 some exceptions. A few examples of those exceptions are below:</p>
 <ul class="simple">
 <li><p>Black defaults to a line length of 88 (79 + 10%) rather than the 79 character <code class="docutils literal notranslate"><span class="pre">PEP</span> <span class="pre">8</span></code> specification. However, line length is a setting can be manually overwritten in your Black configuration.</p></li>
-<li><p>Black and Blue will not adjust line length in your comments or docstrings.</p></li>
-<li><p>Neither tool will review and fix import order (you need <em>isort</em> to do that - see below).</p></li>
+<li><p>Black will not adjust line length in your comments or docstrings.</p></li>
+<li><p>This tool will not review and fix import order (you need <em>isort</em> or <em>Ruff</em> to do that - see below).</p></li>
 </ul>
-<p>Blue addresses a few format decisions in Black that some maintainers do not like.
-<a class="reference external" href="https://blue.readthedocs.io/en/latest/#so-what-s-different">You can compare the differences here</a> and decide which tool you prefer!</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you are interested in seeing how Black will format your code, you can
 use the <a class="reference external" href="https://black.vercel.app/">Black playground</a></p>
 </div>
-<p>Using a code formatter like Black or Blue will leave you more time to work on
+<p>Using a code formatter like Black will leave you more time to work on
 code function rather than worry about format.</p>
 </section>
 <section id="flake8-for-linting-code-in-python-packages">
-<h3>flake8 for linting code in Python packages<a class="headerlink" href="#flake8-for-linting-code-in-python-packages" title="Permalink to this heading">#</a></h3>
+<h3>flake8 for linting code in Python packages<a class="headerlink" href="#flake8-for-linting-code-in-python-packages" title="Link to this heading">#</a></h3>
 <p>To adhere to Python <code class="docutils literal notranslate"><span class="pre">pep8</span></code> format standards, you might want to add
 <a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a> to your code format
 toolbox.</p>
@@ -788,7 +673,7 @@ stravalib/model.py:496:80:<span class="w"> </span>E501<span class="w"> </span>li
 </div>
 </section>
 <section id="isort">
-<h3>Isort<a class="headerlink" href="#isort" title="Permalink to this heading">#</a></h3>
+<h3>Isort<a class="headerlink" href="#isort" title="Link to this heading">#</a></h3>
 <p>Python imports refer to the Python packages that a module in your package
 requires. Imports should always be located at the top of each Python module in
 your package.</p>
@@ -807,9 +692,8 @@ fix or identify issues with the order of package imports.</p>
 order. It will then modify your code, automatically reordering
 all imports. This leaves you with one less thing to think about when cleaning
 up your code.</p>
-</section>
 <section id="example-application-of-isort">
-<h3>Example application of isort<a class="headerlink" href="#example-application-of-isort" title="Permalink to this heading">#</a></h3>
+<h4>Example application of isort<a class="headerlink" href="#example-application-of-isort" title="Link to this heading">#</a></h4>
 <p>Code imports before <code class="docutils literal notranslate"><span class="pre">isort</span></code> is run:</p>
 <p>Below, the exc module is a part of starvalib which is a
 third party package. <code class="docutils literal notranslate"><span class="pre">abc</span></code> and <code class="docutils literal notranslate"><span class="pre">logging</span></code> are core <code class="docutils literal notranslate"><span class="pre">Python</span></code> packages
@@ -838,10 +722,47 @@ spaces in the imports listed below.</p>
 </div>
 </section>
 </section>
+<section id="ruff">
+<h3>Ruff<a class="headerlink" href="#ruff" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://beta.ruff.rs">Ruff</a> is a new addition to the code quality ecosystem,
+gaining some traction since its release.
+<code class="docutils literal notranslate"><span class="pre">ruff</span></code> is a linter for Python, aiming to replace several tools behind a single interface.
+As such, <code class="docutils literal notranslate"><span class="pre">ruff</span></code> can be used instead of <code class="docutils literal notranslate"><span class="pre">flake8</span></code> and <code class="docutils literal notranslate"><span class="pre">isort</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ruff</span></code> has some interesting features that distinguish it from other linters:</p>
+<ul class="simple">
+<li><p>Linter configuration in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
+<li><p>Several hundred rules included, many of which are automatically fixable</p></li>
+<li><p>Rules explanation, see <a class="reference external" href="https://beta.ruff.rs/docs/rules/undefined-local-with-import-star/">F403</a> for an example</p></li>
+<li><p>Fast execution time, makes a quick feedback loop possible even on large projects.</p></li>
+</ul>
+<p>Here is a simple configuration to get started with <code class="docutils literal notranslate"><span class="pre">ruff</span></code>:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># pyproject.toml</span>
+
+<span class="k">[tool.ruff]</span>
+<span class="n">select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;E&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pycodestyle errors</span>
+<span class="w">    </span><span class="s">&quot;W&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pycodestyle warnings</span>
+<span class="w">    </span><span class="s">&quot;F&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pyflakes. &quot;E&quot; + &quot;W&quot; + &quot;F&quot; + &quot;C90&quot; (mccabe complexity) is equivalent to flake8</span>
+<span class="w">    </span><span class="s">&quot;I&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># isort</span>
+<span class="p">]</span>
+<span class="n">ignore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;E501&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># line &gt;79, handled by black</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Depending on your project, you might want to add the following to sort imports correctly:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># pyproject.toml</span>
+
+<span class="k">[tool.ruff.isort]</span>
+<span class="n">known-first-party</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;&lt;package_folder&gt;&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
 <section id="how-to-use-code-formatter-in-your-local-workflow">
-<h2>How to use code formatter in your local workflow<a class="headerlink" href="#how-to-use-code-formatter-in-your-local-workflow" title="Permalink to this heading">#</a></h2>
+<h2>How to use code formatter in your local workflow<a class="headerlink" href="#how-to-use-code-formatter-in-your-local-workflow" title="Link to this heading">#</a></h2>
 <section id="linters-code-formatters-and-your-favorite-coding-tools">
-<h3>Linters, code formatters and your favorite coding tools<a class="headerlink" href="#linters-code-formatters-and-your-favorite-coding-tools" title="Permalink to this heading">#</a></h3>
+<h3>Linters, code formatters and your favorite coding tools<a class="headerlink" href="#linters-code-formatters-and-your-favorite-coding-tools" title="Link to this heading">#</a></h3>
 <p>Linters can be run as a command-line tool as shown above. They also can
 be run within your favorite coding tool (e.g. VScode, pycharm, etc).
 For example, you might prefer to have tools like Black and isort
@@ -850,12 +771,12 @@ your favorite code format tools on demand.</p>
 </section>
 </section>
 <section id="use-pre-commit-hooks-to-run-code-formatters-and-linters-on-commits">
-<h2>Use pre-commit hooks to run code formatters and linters on commits<a class="headerlink" href="#use-pre-commit-hooks-to-run-code-formatters-and-linters-on-commits" title="Permalink to this heading">#</a></h2>
+<h2>Use pre-commit hooks to run code formatters and linters on commits<a class="headerlink" href="#use-pre-commit-hooks-to-run-code-formatters-and-linters-on-commits" title="Link to this heading">#</a></h2>
 <p>You can also setup a <code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">hook</span></code> in your Python package repository.</p>
 <p>A pre-commit hook is a tool that allows an action (or actions)
 to be triggered when you apply a commit to your git repository.</p>
 <section id="pre-commit-hook-example-workflow">
-<h3>Pre-commit hook example workflow<a class="headerlink" href="#pre-commit-hook-example-workflow" title="Permalink to this heading">#</a></h3>
+<h3>Pre-commit hook example workflow<a class="headerlink" href="#pre-commit-hook-example-workflow" title="Link to this heading">#</a></h3>
 <p>The precommit workflow looks like this:
 You type and run:</p>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;message</span> <span class="pre">here&quot;</span></code> at the command line</p>
@@ -873,13 +794,13 @@ issues, manually.</p></li>
 <li><p>Once all of the fixes are applied you can re-add (stage) the files to be
 commit. And re-run your commit.</p></li>
 </ul>
-<figure class="align-default" id="fig-target">
+<figure class="align-default" id="precommit-hook">
 <a class="reference internal image-reference" href="../_images/precommit-hook-python-code.png"><img alt="Diagram showing the steps of a pre-commit workflow from left to right." src="../_images/precommit-hook-python-code.png" style="width: 700px;" /></a>
 <figcaption>
 <p><span class="caption-text">The pre-commit workflow begins with you adding files that have changes to be
 staged in git. Next, you’d run git commit. when you run git commit, the pre-commit
 hooks will then run. In this example, Black, the code formatter and flake8, a linter both run. If all of the files pass Black and flake8 checks, then your commit will be recorded. If they don’t, the commit is canceled. You will have to fix any flake8 issues,
-and then re-add / stage the files to be committed. <a class="reference external" href="https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/*"><em>Image Source</em></a></span><a class="headerlink" href="#fig-target" title="Permalink to this image">#</a></p>
+and then re-add / stage the files to be committed. <a class="reference external" href="https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/*"><em>Image Source</em></a></span><a class="headerlink" href="#precommit-hook" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <!-- For instance, if you setup the Black code formatter as a pre-commit hook,
@@ -898,7 +819,7 @@ new changes are merged.</p>
 </section>
 </section>
 <section id="general-pre-commit-checks">
-<h2>General pre commit checks<a class="headerlink" href="#general-pre-commit-checks" title="Permalink to this heading">#</a></h2>
+<h2>General pre commit checks<a class="headerlink" href="#general-pre-commit-checks" title="Link to this heading">#</a></h2>
 <p>In addition to calling tools, Pre-commit also has a suite of <a class="reference external" href="https://github.com/pre-commit/pre-commit-hooks#hooks-available">built in format
 hooks</a> that
 you can call. Some, such as trailing-whitespace can be also useful to add
@@ -907,7 +828,7 @@ to your pre-commit workflow to ensure clean, streamlined code files.</p>
 all setup.</p>
 </section>
 <section id="pre-commit-ci">
-<h2>Pre-commit.ci<a class="headerlink" href="#pre-commit-ci" title="Permalink to this heading">#</a></h2>
+<h2>Pre-commit.ci<a class="headerlink" href="#pre-commit-ci" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://pre-commit.ci">Pre-commit.ci</a> is a bot that may become your new
 best friend. This bot, when setup on a repo can be configured to do the following:</p>
 <ul class="simple">
@@ -927,7 +848,7 @@ about fixing code format. The bot will do the work for them.</p></li>
 </ul>
 </section>
 <section id="setting-up-a-git-pre-commit-hook">
-<h2>Setting up a git pre-commit hook<a class="headerlink" href="#setting-up-a-git-pre-commit-hook" title="Permalink to this heading">#</a></h2>
+<h2>Setting up a git pre-commit hook<a class="headerlink" href="#setting-up-a-git-pre-commit-hook" title="Link to this heading">#</a></h2>
 <p>To setup pre-commit locally, you need to do 3 things:</p>
 <ol class="arabic simple">
 <li><p>Install pre-commit (and include it as a development requirement in your repository)</p></li>
@@ -998,13 +919,13 @@ in this case, it specifies a <code class="docutils literal notranslate"><span cl
 Pre-commit will run every time you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>pyOpenSci suggests setting up a linter and a code styler for
 your package, regardless of whether you use pre-commit hooks, CI
 or other infrastructure to manage code format. Setting up these
 tools will give you automatic feedback about your code’s
-structure as you (or a contributor) write it. And using tools
-like black or blue that format code for you, reduce effort that
+structure as you (or a contributor) write it. And using a tool
+like black that format code for you, reduce effort that
 you need to make surrounding decisions around code format and
 style.</p>
 </section>
@@ -1015,11 +936,10 @@ style.</p>
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="python-package-versions.html"
@@ -1031,18 +951,15 @@ style.</p>
       </div>
     </a>
     <a class="right-next"
-       href="publish-python-package-pypi-conda.html"
+       href="../ci-and-testing/intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Publishing Your Package In A Community Repository: PyPI or Anaconda Cloud</p>
+        <p class="prev-next-title">CI and Testing - Coming Soon!</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1064,10 +981,13 @@ style.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-format-and-style">Code format and style</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#black-and-blue">Black and Blue</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#black">Black</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flake8-for-linting-code-in-python-packages">flake8 for linting code in Python packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isort">Isort</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-application-of-isort">Example application of isort</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isort">Isort</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-application-of-isort">Example application of isort</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ruff">Ruff</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-code-formatter-in-your-local-workflow">How to use code formatter in your local workflow</a><ul class="nav section-nav flex-column">
@@ -1121,8 +1041,8 @@ style.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1141,10 +1061,11 @@ style.</p>
     </div>
   
   
+  
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
 </p></div>
       
     </div>

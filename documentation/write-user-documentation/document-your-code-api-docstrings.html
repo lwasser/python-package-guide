@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
         <script>
@@ -23,12 +22,7 @@
 <meta property="og:url" content="documentation/write-user-documentation/document-your-code-api-docstrings.html" />
 <meta property="og:site_name" content="python-package-guide" />
 <meta property="og:description" content="What is an API?: API stands for A pplied P rogramming I nterface. When discussed in the context of a (Python) package, the API refers to the functions, classes, methods, and attributes that a packa..." />
-<meta property="og:image:width" content="1146" />
-<meta property="og:image:height" content="600" />
-<meta property="og:image" content="/_images/social_previews/summary_documentation_write-user-documentation_document-your-code-api-docstrings_6530669a.png" />
-<meta property="og:image:alt" content="What is an API?: API stands for A pplied P rogramming I nterface. When discussed in the context of a (Python) package, the API refers to the functions, class..." />
 <meta name="description" content="What is an API?: API stands for A pplied P rogramming I nterface. When discussed in the context of a (Python) package, the API refers to the functions, classes, methods, and attributes that a packa..." />
-<meta name="twitter:card" content="summary_large_image" />
 
     <title>Document the code in your package’s API using docstrings &#8212; Python Packaging Guide</title>
   
@@ -40,35 +34,33 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pyos.css?v=dab19a8a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-141260825-1"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -76,8 +68,14 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-141260825-1');
             </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-141260825-1');
+            </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/write-user-documentation/document-your-code-api-docstrings';</script>
-    <script src="../../_static/matomo.js"></script>
+    <script src="../../_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/package-review-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -93,6 +91,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -139,12 +146,14 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -163,7 +172,6 @@
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -198,97 +206,34 @@
                       </a>
                     </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
-                <div class="dropdown-menu">
+                <ul id="pst-nav-more-links" class="dropdown-menu">
                     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../index.html">
-                        Documentation Overview
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="intro.html">
-                        Write User Documentation
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../repository-files/intro.html">
-                        Core GitHub Repository Files
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../hosting-tools/intro.html">
-                        Documentation Tools & Hosting
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../package-structure-code/python-package-versions.html">
-                        Manage Package Versions
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../package-structure-code/publish-python-package-pypi-conda.html">
-                        Publish Package PyPI Conda
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../package-structure-code/code-style-linting-format.html">
-                        Code Style & Format
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../python-packaging/intro.html">
-                        Intro
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../ci-and-testing/intro.html">
-                        Intro
-                      </a>
-                    </li>
-                
-
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
                     pyOpenSci Website
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
                     Peer Review Guide
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://pyopensci.org/governance">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
                     Governance
                   </a>
                 </li>
                 
-                </div>
-            </div>
+                </ul>
+            </li>
             
   </ul>
 </nav></div>
@@ -300,23 +245,25 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -332,8 +279,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -344,8 +291,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
         <li class="nav-item">
           
@@ -356,8 +303,8 @@ document.write(`
           
           
           
-          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
-            <label class="sr-only">Mastodon</label></a>
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
         </li>
 </ul></div>
       
@@ -367,18 +314,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -427,97 +376,34 @@ document.write(`
                       </a>
                     </li>
                 
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
-                <div class="dropdown-menu">
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../index.html">
-                        Documentation Overview
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="intro.html">
-                        Write User Documentation
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../repository-files/intro.html">
-                        Core GitHub Repository Files
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../hosting-tools/intro.html">
-                        Documentation Tools & Hosting
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../package-structure-code/python-package-versions.html">
-                        Manage Package Versions
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../package-structure-code/publish-python-package-pypi-conda.html">
-                        Publish Package PyPI Conda
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../package-structure-code/code-style-linting-format.html">
-                        Code Style & Format
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../python-packaging/intro.html">
-                        Intro
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../ci-and-testing/intro.html">
-                        Intro
-                      </a>
-                    </li>
-                
-
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org">
                     pyOpenSci Website
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                  <a class="nav-link dropdown-item nav-external" href="https://www.pyopensci.org/software-peer-review">
                     Peer Review Guide
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link nav-external" href="https://pyopensci.org/governance">
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
                     Governance
                   </a>
                 </li>
                 
-                </div>
-            </div>
+                </ul>
+            </li>
             
   </ul>
 </nav></div>
@@ -531,10 +417,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -550,8 +436,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/pyopensci/python-package-guide" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -562,8 +448,8 @@ document.write(`
           
           
           
-          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a href="https://twitter.com/pyopensci" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
         </li>
         <li class="nav-item">
           
@@ -574,8 +460,8 @@ document.write(`
           
           
           
-          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon"></i></span>
-            <label class="sr-only">Mastodon</label></a>
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
         </li>
 </ul></div>
         
@@ -643,8 +529,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../../index.html" class="nav-link" aria-label="Home">
@@ -654,7 +540,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Documentation for your Open Source Python Package</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Document the code in your package’s API using docstrings</li>
+    <li class="breadcrumb-item active" aria-current="page">Document...</li>
   </ul>
 </nav>
 </div>
@@ -672,9 +558,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="document-the-code-in-your-package-s-api-using-docstrings">
-<h1>Document the code in your package’s API using docstrings<a class="headerlink" href="#document-the-code-in-your-package-s-api-using-docstrings" title="Permalink to this heading">#</a></h1>
+<h1>Document the code in your package’s API using docstrings<a class="headerlink" href="#document-the-code-in-your-package-s-api-using-docstrings" title="Link to this heading">#</a></h1>
 <section id="what-is-an-api">
-<h2>What is an API?<a class="headerlink" href="#what-is-an-api" title="Permalink to this heading">#</a></h2>
+<h2>What is an API?<a class="headerlink" href="#what-is-an-api" title="Link to this heading">#</a></h2>
 <p>API stands for <strong>A</strong>pplied <strong>P</strong>rogramming <strong>I</strong>nterface. When
 discussed in the context of a (Python) package, the API refers to
 the functions, classes, methods, and attributes that a package maintainer creates for users.</p>
@@ -686,7 +572,7 @@ using the package’s API.</p>
 <p>Package APIs consist of functions, classes, methods and attributes that create a user interface.</p>
 </section>
 <section id="what-is-a-docstring-and-how-does-it-relate-to-documentation">
-<h2>What is a docstring and how does it relate to documentation?<a class="headerlink" href="#what-is-a-docstring-and-how-does-it-relate-to-documentation" title="Permalink to this heading">#</a></h2>
+<h2>What is a docstring and how does it relate to documentation?<a class="headerlink" href="#what-is-a-docstring-and-how-does-it-relate-to-documentation" title="Link to this heading">#</a></h2>
 <p>In Python a docstring refers to text in a function, method or class
 that describes what the function does and its inputs and outputs. Python programmers usually refer to the inputs to functions as <a class="reference external" href="https://docs.python.org/3/glossary.html#term-parameter">“parameters”</a> or <a class="reference external" href="https://docs.python.org/3/faq/programming.html#faq-argument-vs-parameter">“arguments”</a>, and the outputs are often called “return values”</p>
 <p>The docstring is thus important for:</p>
@@ -704,7 +590,7 @@ that describes what the function does and its inputs and outputs. Python program
 </div>
 </section>
 <section id="python-package-api-documentation">
-<h2>Python package API documentation<a class="headerlink" href="#python-package-api-documentation" title="Permalink to this heading">#</a></h2>
+<h2>Python package API documentation<a class="headerlink" href="#python-package-api-documentation" title="Link to this heading">#</a></h2>
 <p>If you have a descriptive docstring for every user-facing
 class, method, attribute and/or function in your package (<em>within reason</em>), then your package’s API is considered well-documented.</p>
 <p>In Python, this means that you need to add a docstring for
@@ -716,7 +602,7 @@ class, method, attribute and/or function in your package (<em>within reason</em>
 <li><p>Explains the expected output <code class="docutils literal notranslate"><span class="pre">return</span></code> of the object, method or function.</p></li>
 </ul>
 <section id="three-python-docstring-formats-and-why-we-like-numpy-style">
-<h3>Three Python docstring formats and why we like NumPy style<a class="headerlink" href="#three-python-docstring-formats-and-why-we-like-numpy-style" title="Permalink to this heading">#</a></h3>
+<h3>Three Python docstring formats and why we like NumPy style<a class="headerlink" href="#three-python-docstring-formats-and-why-we-like-numpy-style" title="Link to this heading">#</a></h3>
 <p>There are several Python docstring formats that you can chose to use when documenting
 your package including:</p>
 <ul class="simple">
@@ -739,7 +625,7 @@ to properly read and format NumPy format docstrings.</p>
 </div>
 </section>
 <section id="docstring-examples-better-and-best">
-<h3>Docstring examples Better and Best<a class="headerlink" href="#docstring-examples-better-and-best" title="Permalink to this heading">#</a></h3>
+<h3>Docstring examples Better and Best<a class="headerlink" href="#docstring-examples-better-and-best" title="Link to this heading">#</a></h3>
 <p>Below is a good example of a well documented function. Notice that this
 function’s docstring describes the function’s inputs and the function’s output
 (or return value). The initial description of the function is short (one line).
@@ -771,7 +657,7 @@ specified.</p>
 <!-- I can't seem to get doc targets across pages to work-->
 </section>
 <section id="best-a-docstring-with-example-use-of-the-function">
-<span id="docstring-best-practice"></span><h3>Best: a docstring with example use of the function<a class="headerlink" href="#best-a-docstring-with-example-use-of-the-function" title="Permalink to this heading">#</a></h3>
+<span id="docstring-best-practice"></span><h3>Best: a docstring with example use of the function<a class="headerlink" href="#best-a-docstring-with-example-use-of-the-function" title="Link to this heading">#</a></h3>
 <p>This example contains an example of using the function that is also tested in
 sphinx using <a class="reference external" href="https://docs.python.org/3/library/doctest.html">doctest</a>.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extent_to_json</span><span class="p">(</span><span class="n">ext_obj</span><span class="p">):</span>
@@ -821,13 +707,13 @@ sphinx using <a class="reference external" href="https://docs.python.org/3/libra
 <p><span class="caption-text">Using the above NumPy format docstring in sphinx, the autodoc extension will
 create the about documentation section for the <code class="docutils literal notranslate"><span class="pre">extent_to_json</span></code> function. The
 output of the <code class="docutils literal notranslate"><span class="pre">es.extent_to_json(rmnp)</span></code> command can even be tested using
-doctest adding another quality check to your package.</span><a class="headerlink" href="#earthpy-json-example" title="Permalink to this image">#</a></p>
+doctest adding another quality check to your package.</span><a class="headerlink" href="#earthpy-json-example" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="using-doctest-to-run-docstring-examples-in-your-package-s-methods-and-functions">
-<h2>Using doctest to run docstring examples in your package’s methods and functions<a class="headerlink" href="#using-doctest-to-run-docstring-examples-in-your-package-s-methods-and-functions" title="Permalink to this heading">#</a></h2>
+<h2>Using doctest to run docstring examples in your package’s methods and functions<a class="headerlink" href="#using-doctest-to-run-docstring-examples-in-your-package-s-methods-and-functions" title="Link to this heading">#</a></h2>
 <!-- This link isn't working no matter how i create the target. not sure
 why -->
 <p>Above, we provided some examples of good, better, best docstring formats. If you are using Sphinx to create your docs, you can add the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html">doctest</a> extension to your Sphinx build. Doctest provides an additional check for docstrings with example code in them.
@@ -877,7 +763,7 @@ doctest will run the example below and test that if you provide
 </div>
 </section>
 <section id="adding-type-hints-to-your-docstrings">
-<h2>Adding type hints to your docstrings<a class="headerlink" href="#adding-type-hints-to-your-docstrings" title="Permalink to this heading">#</a></h2>
+<h2>Adding type hints to your docstrings<a class="headerlink" href="#adding-type-hints-to-your-docstrings" title="Link to this heading">#</a></h2>
 <p>In the example above, you saw the use of numpy-style docstrings to describe data types
 that are passed into functions as parameters or
 into classes as attributes. In a numpy-style docstring you add those
@@ -908,7 +794,7 @@ the output of the function is also an int.</p>
 </pre></div>
 </div>
 <section id="why-use-type-hints">
-<h3>Why use type hints<a class="headerlink" href="#why-use-type-hints" title="Permalink to this heading">#</a></h3>
+<h3>Why use type hints<a class="headerlink" href="#why-use-type-hints" title="Link to this heading">#</a></h3>
 <p>Type hints:</p>
 <ul class="simple">
 <li><p>Make development and debugging faster,</p></li>
@@ -931,7 +817,7 @@ the output of the function is also an int.</p>
 </div>
 </section>
 <section id="gradually-adding-type-hints">
-<h3>Gradually adding type hints<a class="headerlink" href="#gradually-adding-type-hints" title="Permalink to this heading">#</a></h3>
+<h3>Gradually adding type hints<a class="headerlink" href="#gradually-adding-type-hints" title="Link to this heading">#</a></h3>
 <p>Adding type hints can take a lot of time. However, you can add
 type hints incrementally as you work on your code.</p>
 <div class="admonition tip">
@@ -949,11 +835,10 @@ digging into more complex contributions.</p>
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="get-started.html"
@@ -973,10 +858,7 @@ digging into more complex contributions.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1044,8 +926,8 @@ digging into more complex contributions.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1064,10 +946,11 @@ digging into more complex contributions.</p>
     </div>
   
   
+  
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
 </p></div>
       
     </div>
