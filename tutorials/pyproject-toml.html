@@ -458,7 +458,7 @@ document.write(`
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Create and publish a Python Package</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">What is a Python package?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1-installable-code.html">Make your code installable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installable-code.html">Make your code installable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-pypi.html">Publish to PyPI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publish-conda-forge.html">Publish to conda-forge</a></li>
 </ul>
@@ -526,7 +526,7 @@ document.write(`
                   
   <section id="make-your-python-package-pypi-ready-pyproject-toml">
 <h1>Make your Python package PyPI ready - pyproject.toml<a class="headerlink" href="#make-your-python-package-pypi-ready-pyproject-toml" title="Link to this heading">#</a></h1>
-<p>In <a class="reference internal" href="#2-installable-code"><span class="xref myst">the installable code lesson</span></a>, you learned how to add the bare minimum information to a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file to make it installable. You then learned how to <a class="reference internal" href="publish-pypi.html"><span class="std std-doc">publish a bare minimum version of your package to PyPI</span></a>.</p>
+<p>In <a class="reference internal" href="installable-code.html"><span class="doc std std-doc">the installable code lesson</span></a>, you learned how to add the bare minimum information to a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file to make it installable. You then learned how to <a class="reference internal" href="publish-pypi.html"><span class="std std-doc">publish a bare minimum version of your package to PyPI</span></a>.</p>
 <p>Following that you learned how to add a:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="add-readme.html"><span class="doc std std-doc">README.md</span></a></p></li>
@@ -599,7 +599,7 @@ that table there are two required key/value pairs.</p>
 <h3>What is the pyproject.toml used for?<a class="headerlink" href="#what-is-the-pyproject-toml-used-for" title="Link to this heading">#</a></h3>
 <p>The pyproject.toml file tells your build tool:</p>
 <ul class="simple">
-<li><p>What build backend to use to build your package (we are using <code class="docutils literal notranslate"><span class="pre">hatchling</span></code> in this tutorial but there are <a class="reference internal" href="#build-backend-options"><span class="xref myst">many others to chose from</span></a>).</p></li>
+<li><p>What build backend to use to build your package (we are using <code class="docutils literal notranslate"><span class="pre">hatchling</span></code> in this tutorial but there are <a class="reference internal" href="../package-structure-code/python-package-build-tools.html"><span class="doc std std-doc">many others to choose from</span></a>).</p></li>
 <li><p>How and where to retrieve your package’s version:</p>
 <ul>
 <li><p><strong>statically</strong> where you declare the version <code class="docutils literal notranslate"><span class="pre">version</span> <span class="pre">=</span> <span class="pre">&quot;0.1.0&quot;</span></code> or</p></li>
@@ -620,7 +620,7 @@ repository to quickly understand your package’s structure such as:</p>
 <p>Finally, the pyproject.toml file is also often used to configure tools such as static type checkers (e.g. mypy) and code formatters/linters (e.g. black, ruff).</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Check out the <a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-pyproject-toml">PyPA documentation</a> if you are interested in setting build configurations for other tools.</p>
+<p>Check out the <a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/#choosing-a-build-backend">PyPA documentation</a> if you are interested in setting build configurations for other tools.</p>
 <p>Note that some build tools may deviate in how they store project metadata. As such you may want to refer to their documentation if you decide to use a tool other than Hatch and hatchling. We have selected hatchling and hatch as our tool of choice for this tutorial as it adheres to PyPA rules and guidelines.</p>
 </div>
 </section>
@@ -672,9 +672,9 @@ help users find your package on PyPI and also better describe the scope of your 
 <p class="admonition-title">More on hatchling</p>
 <p>The documentation for the hatchling back-end is <a class="reference external" href="https://hatch.pypa.io/latest/config/metadata/">here</a></p>
 </div>
-<section id="step-1-populate-the-project-table-with-author-maintainer-and-project-description">
-<h3>Step 1: Populate the [project] table with author, maintainer and project description<a class="headerlink" href="#step-1-populate-the-project-table-with-author-maintainer-and-project-description" title="Link to this heading">#</a></h3>
-<p>After completing the <a class="reference internal" href="1-installable-code.html"><span class="doc std std-doc">installable code tutorial</span></a>, you should have a pyproject.toml file with a project name and a version in the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table.</p>
+<section id="step-1-add-author-maintainer-and-project-description">
+<h3>Step 1: Add Author, maintainer and project description<a class="headerlink" href="#step-1-add-author-maintainer-and-project-description" title="Link to this heading">#</a></h3>
+<p>After completing the <a class="reference internal" href="installable-code.html"><span class="doc std std-doc">installable code tutorial</span></a>, you should have a pyproject.toml file with a project name and a version in the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
 <span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
@@ -686,18 +686,41 @@ help users find your package on PyPI and also better describe the scope of your 
 <li><p>package <strong>authors</strong></p></li>
 <li><p>package <strong>maintainers</strong></p></li>
 </ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">description</span></code> is just a string like the other values you’ve set:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># you can use &quot;&quot;&quot; for multiline strings like in python!</span>
+
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
 <p>When you add authors and maintainers you need to use a format that will look like a Python list with a dictionary within it:</p>
-<p><code class="docutils literal notranslate"><span class="pre">authors</span> <span class="pre">=</span> <span class="pre">[{</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;Firstname</span> <span class="pre">lastname&quot;,</span> <span class="pre">email</span> <span class="pre">=</span> <span class="pre">&quot;email&#64;pyopensci.org&quot;</span> <span class="pre">}]</span></code></p>
-<p>If you have two authors you can add them like this:</p>
-<p><code class="docutils literal notranslate"><span class="pre">authors</span> <span class="pre">=</span> <span class="pre">[{</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;Firstname</span> <span class="pre">lastname&quot;,</span> <span class="pre">email</span> <span class="pre">=</span> <span class="pre">&quot;email&#64;pyopensci.org&quot;</span> <span class="pre">},</span> <span class="pre">{</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;Firstname</span> <span class="pre">lastname&quot;,</span> <span class="pre">email</span> <span class="pre">=</span> <span class="pre">&quot;email&#64;pyopensci.org&quot;</span> <span class="pre">}]</span></code></p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
 <div class="note admonition">
 <p class="admonition-title">Author names &amp; emails</p>
 <p>There is a quirk with PyPI for authors that have names but not emails in the pyproject.toml. If you are missing the email for one or more authors or maintainers, like this:</p>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="w"> </span><span class="p">}]</span>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <p>Then we suggest that you only provide names in your list of names to ensure that everything renders properly on your PyPI page - like this:</p>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="w"> </span><span class="p">}]</span>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <p>don’t have emails for everyone, we suggest that you only add names.</p>
@@ -710,9 +733,18 @@ help users find your package on PyPI and also better describe the scope of your 
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
 <span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
-<span class="hll"><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tools that update the pyOpenSci contributor and review metadata that is posted on our website&quot;</span>
-</span><span class="hll"><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
-</span><span class="hll"><span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
+<span class="hll"><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+</span><span class="hll"><span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+</span><span class="hll"><span class="s2">that is posted on our website</span>
+</span><span class="hll"><span class="s2">&quot;&quot;&quot;</span>
+</span><span class="hll"><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span class="hll"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+</span><span class="hll"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span class="hll"><span class="p">]</span>
+</span><span class="hll"><span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span class="hll"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span class="hll"><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span class="hll"><span class="p">]</span>
 </span></pre></div>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -735,8 +767,8 @@ Learn More: What’s the difference between author and maintainer in open source
 you want to have listed as authors and maintainers on your PyPI landing page.</p>
 </div>
 </details></section>
-<section id="step-2-link-your-readme-and-license-in-your-pyproject-toml-file">
-<h3>Step 2: Link your README and license in your pyproject.toml file<a class="headerlink" href="#step-2-link-your-readme-and-license-in-your-pyproject-toml-file" title="Link to this heading">#</a></h3>
+<section id="step-2-add-readme-and-license">
+<h3>Step 2: Add README and license<a class="headerlink" href="#step-2-add-readme-and-license" title="Link to this heading">#</a></h3>
 <p>In the previous lessons, you added both a <a class="reference internal" href="add-readme.html"><span class="doc std std-doc">README.md</span></a> file and a <a class="reference internal" href="add-license-coc.html"><span class="doc std std-doc">LICENSE</span></a> to your package repository.
 Once you have those files, you can add them to your pyproject.toml file as
 links following the example below.</p>
@@ -747,16 +779,25 @@ links following the example below.</p>
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
 <span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
-<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tools that update the pyOpenSci contributor and review metadata that is posted on our website&quot;</span>
-<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
-<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
 <span class="hll"><span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-</span><span class="hll"><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
+</span><span class="hll"><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;LICENSE&quot;</span><span class="p">}</span>
 </span></pre></div>
 </div>
 </section>
-<section id="step-3-add-requires-python-to-your-project-table">
-<h3>Step 3: Add requires-python to your [project] table<a class="headerlink" href="#step-3-add-requires-python-to-your-project-table" title="Link to this heading">#</a></h3>
+<section id="step-3-specify-python-version-with-requires-python">
+<h3>Step 3: Specify Python version with <code class="docutils literal notranslate"><span class="pre">requires-python</span></code><a class="headerlink" href="#step-3-specify-python-version-with-requires-python" title="Link to this heading">#</a></h3>
 <p>Finally, add the <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> field to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table. The <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> field, helps pip understand the lowest version of Python that you package supports when it’s installed. It is thus a single value.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
 <span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
@@ -765,17 +806,26 @@ links following the example below.</p>
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
 <span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
-<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tools that update the pyOpenSci contributor and review metadata that is posted on our website&quot;</span>
-<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
-<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
 <span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
 <span class="hll"><span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
 </span></pre></div>
 </div>
 </section>
-<section id="step-4-add-package-dependencies-to-your-project-table">
-<h3>Step 4: Add package dependencies to your [project] table<a class="headerlink" href="#step-4-add-package-dependencies-to-your-project-table" title="Link to this heading">#</a></h3>
+<section id="step-4-specify-dependencies">
+<h3>Step 4: Specify Dependencies<a class="headerlink" href="#step-4-specify-dependencies" title="Link to this heading">#</a></h3>
 <p>Next add your dependencies table to the project table.
 The <code class="docutils literal notranslate"><span class="pre">dependencies</span> <span class="pre">=</span></code> section contains a list (or array in the toml language) of the Python packages that your package requires to run properly in a Python environment. Similar to the requirements listed in the  <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> table above:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span><span class="w"> </span><span class="c1"># &lt;- this is a table</span>
@@ -790,9 +840,18 @@ The <code class="docutils literal notranslate"><span class="pre">dependencies</s
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
 <span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
-<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tools that update the pyOpenSci contributor and review metadata that is posted on our website&quot;</span>
-<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
-<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
 <span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
@@ -815,11 +874,11 @@ A dependency pinned to a single specific version can make
 resolving a Python environment more challenging. As such only
 pin dependencies to a specific version if you absolutely need to
 do so.</p>
-<p>One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. <a class="reference internal" href="#../package-structure-code/python-package-build-tools.html#challenges-with-poetry"><span class="xref myst">Read more about how to safely add dependencies with Poetry, here.</span></a></p>
+<p>One build tool that you should be aware of that pins dependencies to an upper bound by default is Poetry. <a class="reference internal" href="../package-structure-code/python-package-build-tools.html#challenges-with-poetry"><span class="std std-ref">Read more about how to safely add dependencies with Poetry, here.</span></a></p>
 </div>
 </section>
-<section id="step-5-add-pypi-classifiers-to-your-pyproject-toml-file">
-<h3>Step 5: Add PyPI classifiers to your pyproject.toml file<a class="headerlink" href="#step-5-add-pypi-classifiers-to-your-pyproject-toml-file" title="Link to this heading">#</a></h3>
+<section id="step-5-add-pypi-classifiers">
+<h3>Step 5: Add PyPI classifiers<a class="headerlink" href="#step-5-add-pypi-classifiers" title="Link to this heading">#</a></h3>
 <p>Next you will add classifiers to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file. The value for each classifier that you add to your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file must come from the list of <a class="reference external" href="https://PyPI.org/classifiers/">PyPI accepted classifier values found here</a>. Any deviations in spelling and format will cause issues when you publish to PyPI.</p>
 <div class="tip admonition">
 <p class="admonition-title">What happens when you use incorrect classifiers?</p>
@@ -845,9 +904,18 @@ do so.</p>
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
 <span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
-<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tools that update the pyOpenSci contributor and review metadata that is posted on our website&quot;</span>
-<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
-<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
 <span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
@@ -861,7 +929,8 @@ do so.</p>
 </span><span class="hll"><span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
 </span><span class="hll"><span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3 :: Only&quot;</span><span class="p">,</span>
 </span><span class="hll"><span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.10&quot;</span><span class="p">,</span>
-</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.11&quot;</span><span class="p">,]</span>
+</span><span class="hll"><span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3.11&quot;</span><span class="p">,</span>
+</span><span class="hll"><span class="p">]</span>
 </span></pre></div>
 </div>
 <p>Note that while classifiers are not required in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file, they will help users find your package. As such we strongly recommend that you add them.</p>
@@ -882,9 +951,18 @@ do so.</p>
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
 <span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
-<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tools that update the pyOpenSci contributor and review metadata that is posted on our website&quot;</span>
-<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
-<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
 <span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
@@ -924,9 +1002,18 @@ is commented with all of the sections we discussed above.</p>
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
 <span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
-<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tools that update the pyOpenSci contributor and review metadata that is posted on our website&quot;</span>
-<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
-<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}]</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Tools that update the pyOpenSci contributor and review metadata</span>
+<span class="s2">that is posted on our website</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Firstname Lastname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Secondperson Fullname&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;email2@pyopensci.org&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;New Friend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;newbie@pyopensci.org&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
 <span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s1">&#39;LICENSE&#39;</span><span class="p">}</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
@@ -1117,11 +1204,11 @@ your package to PyPI.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-update-your-pyproject-toml-file">How to update your pyproject.toml file</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-populate-the-project-table-with-author-maintainer-and-project-description">Step 1: Populate the [project] table with author, maintainer and project description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-link-your-readme-and-license-in-your-pyproject-toml-file">Step 2: Link your README and license in your pyproject.toml file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-add-requires-python-to-your-project-table">Step 3: Add requires-python to your [project] table</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-add-package-dependencies-to-your-project-table">Step 4: Add package dependencies to your [project] table</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-pypi-classifiers-to-your-pyproject-toml-file">Step 5: Add PyPI classifiers to your pyproject.toml file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-add-author-maintainer-and-project-description">Step 1: Add Author, maintainer and project description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-readme-and-license">Step 2: Add README and license</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-specify-python-version-with-requires-python">Step 3: Specify Python version with <code class="docutils literal notranslate"><span class="pre">requires-python</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-specify-dependencies">Step 4: Specify Dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-add-pypi-classifiers">Step 5: Add PyPI classifiers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-add-the-project-urls-table">Step 6: Add the <code class="docutils literal notranslate"><span class="pre">[project.urls]</span></code> table</a></li>
 </ul>
 </li>
