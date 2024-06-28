@@ -42,7 +42,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=ba8f538e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -51,11 +51,11 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/pyproject-toml-python-package-metadata';</script>
     <script src="../_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/package-structure-code/pyproject-toml-python-package-metadata.html" />
@@ -209,8 +209,8 @@
                 
 
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
-                    Governance
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
                   </a>
                 </li>
                 
@@ -375,8 +375,8 @@ document.write(`
                 
 
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
-                    Governance
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
                   </a>
                 </li>
                 
@@ -561,11 +561,11 @@ Below that table identifier are key/value pairs that
 support configuration for that particular table.</p>
 <ul class="simple">
 <li><p>Below <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> is considered a table in the toml language.</p></li>
-<li><p>Within the build-system table below requires = is a key.</p></li>
-<li><p>The associated value for requires is an array containing the value “hatchling”.</p></li>
+<li><p>Within the <code class="docutils literal notranslate"><span class="pre">build-system</span></code> table below <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> is a key.</p></li>
+<li><p>The associated value for <code class="docutils literal notranslate"><span class="pre">requires</span></code> is an array containing the value <code class="docutils literal notranslate"><span class="pre">&quot;hatchling&quot;</span></code>.</p></li>
 </ul>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span><span class="w"> </span><span class="c1"># &lt;- this is a table</span>
-<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span><span class="w"> </span><span class="c1">#  requires =  is a key and &quot;hatchling&quot; is a value contained within an array specified by square brackets [].</span>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -574,7 +574,8 @@ support configuration for that particular table.</p>
 <!-- TODO: this text below is now on the build sdist / wheel page. that entire section likely belongs here.  -->
 <p>When you publish to PyPI, you will notice that each package has metadata listed. Let’s have a look at <a class="reference external" href="https://pypi.org/project/xclim/">xclim</a>, one of our <a class="reference external" href="https://www.pyopensci.org/python-packages.html">pyOpenSci packages</a>. Notice that on the PyPI landing page you see some metadata about the package including python, maintainer information and more. PyPI is able to populate this metadata because it was defined using correct syntax and classifiers by Xclim’s maintainers, <a class="reference external" href="https://github.com/Ouranosinc/xclim/blob/master/pyproject.toml">pyproject.toml file</a>. This metadata when the xclim package is built, is translated into a distribution file that allows PyPI to read the metadata and print it out on their website.</p>
 <figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="../_images/pypi-metadata-classifiers.png"><img alt="Image showing the left side bar of PyPI for the package xclim. The section at the top says Classifier. Below there is a list of items including Development status, intended audience, License, natural language, operating system, programming language and topic. Below each of those sections are various classifier options.&quot; width=&quot;300px&quot;&gt;" src="../_images/pypi-metadata-classifiers.png" style="width: 320.0px; height: 637.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/pypi-metadata-classifiers.png"><img alt="Image showing the left side bar of PyPI for the package xclim. The section at the top says Classifier. Below there is a list of items including Development status, intended audience, License, natural language, operating system, programming language and topic. Below each of those sections are various classifier options.&quot; width=&quot;300px&quot;&gt;" src="../_images/pypi-metadata-classifiers.png" style="width: 320.0px; height: 637.0px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">When you add the classifier section to your pyproject.toml
 and your package is built, the build tool organizes the metadata into a format that PyPI can understand and
@@ -626,13 +627,13 @@ what dependencies your package requires.</p>
 <li><p><strong>Maintainers:</strong> you can choose to populate this or not. You can populate this using a list with a sub element for each author or maintainer name, email</p></li>
 </ul>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;A. Random Developer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;author@example.com&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">},</span>
 <span class="p">]</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p><strong>dependencies:</strong> dependencies are optional but we strongly suggest you include them in your pyproject.toml. Dependencies will be installed by pip when your project is installed creating a better user-experience.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code>:</strong> the optional or development dependencies will be installed if someone runs <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">projectname[dev]</span></code>. This is a nice way to include your development dependencies for users who may wish to contribute to your project.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code>:</strong> the optional or development dependencies will be installed if someone runs <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">projectname[dev]</span></code>. This is a nice way to include your development dependencies for users who may wish to contribute to your project.</p></li>
 <li><p><strong>keywords:</strong> These are the keywords that will appear on your PyPI landing page. Think of them as words that people might use to search for your package.</p></li>
 <li><p><strong>classifiers:</strong> The classifiers section of your metadata is also important for the landing page of your package in PyPI and for filtering of packages in PyPI. A list of <a class="reference external" href="https://PyPI.org/classifiers/">all options for classifiers can be found her</a>e. Some of the classifiers that you should consider including</p>
 <ul>
@@ -663,28 +664,39 @@ what dependencies your package requires.</p>
 <p>The pyproject.toml file can also be used as a replacement for the requirements.txt file which has been traditionally used to store development dependencies such as pytest, code formatters such as Black and documentation tools such as sphinx.</p>
 <p>To add dependencies to your build, add a <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table to your pyproject.toml file.</p>
 <p>Then specify dependency groups as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">project</span><span class="o">.</span><span class="n">optional</span><span class="o">-</span><span class="n">dependencies</span><span class="p">]</span>
-<span class="n">tests</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="s2">&quot;pytest,</span>
-  <span class="s2">&quot;pytest-cov&quot;</span>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
+<span class="n">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;pytest-cov&quot;</span>
 <span class="p">]</span>
-<span class="n">lint</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="s2">&quot;black&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;flake8&quot;</span>
+<span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;flake8&quot;</span>
 <span class="p">]</span>
-<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;pydata-sphinx-theme</span>
+<span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;pydata-sphinx-theme&quot;</span>
 <span class="p">]</span>
+
+<span class="k">[tool.ruff]</span>
+<span class="n">select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;E&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pycodestyle errors</span>
+<span class="w">    </span><span class="s2">&quot;W&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pycodestyle warnings</span>
+<span class="w">    </span><span class="s2">&quot;F&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># pyflakes. &quot;E&quot; + &quot;W&quot; + &quot;F&quot; + &quot;C90&quot; (mccabe complexity) is equivalent to flake8</span>
+<span class="w">    </span><span class="s2">&quot;I&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># isort</span>
+<span class="p">]</span>
+
+<span class="k">[tool.ruff.isort]</span>
+<span class="n">known-first-party</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;examplePy&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Following the above example, you install dependencies like this:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.[tests]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.[tests]</span></code></p></li>
 </ul>
 <p>The above will install both your package in editable mode and all of the dependencies declared in the tests section of your <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table.</p>
 <p>To install all dependencies and also your package, you’d use:</p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.[tests,lint,docs]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.[tests,lint,docs]</span></code></p>
 <div class="tip admonition">
 <p class="admonition-title">Recursive dependencies</p>
 <p>You can also setup sets of recursive dependencies. <a class="reference external" href="https://hynek.me/articles/python-recursive-optional-dependencies/">See this blog post for more.</a></p>
@@ -738,29 +750,29 @@ of values. It has two keys that specify the build backend API and containing pac
 <li><p><code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">build-back-end</span> <span class="pre">=</span></code></p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">]</span>
-<span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;setuptools&gt;=61&quot;</span><span class="p">]</span>
-<span class="n">build</span><span class="o">-</span><span class="n">backend</span> <span class="o">=</span> <span class="s2">&quot;setuptools.build_meta&quot;</span>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&gt;=61&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;setuptools.build_meta&quot;</span>
 
-<span class="p">[</span><span class="n">project</span><span class="p">]</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;examplePy&quot;</span>
-<span class="n">authors</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span> <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">},</span>
+<span class="k">[project]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;examplePy&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;Some Maintainer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;some-email@pyopensci.org&quot;</span><span class="p">},</span>
 <span class="p">]</span>
-<span class="n">maintainers</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;All the contributors&quot;</span><span class="p">},</span>
+<span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;All the contributors&quot;</span><span class="p">},</span>
 <span class="p">]</span>
-<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;An example Python package used to support Python packaging tutorials&quot;</span>
-<span class="n">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pyOpenSci&quot;</span><span class="p">,</span> <span class="s2">&quot;python packaging&quot;</span><span class="p">]</span>
-<span class="n">readme</span> <span class="o">=</span> <span class="s2">&quot;README.md&quot;</span>
-<span class="n">classifiers</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;License :: OSI Approved :: BSD License&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;An example Python package used to support Python packaging tutorials&quot;</span>
+<span class="n">keywords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pyOpenSci&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;python packaging&quot;</span><span class="p">]</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: BSD License&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
 <span class="p">]</span>
-<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;dependency-package-name-1&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;dependency-package-name-2&quot;</span><span class="p">,</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;dependency-package-name-1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;dependency-package-name-2&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>

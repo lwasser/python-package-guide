@@ -42,7 +42,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=ba8f538e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -51,11 +51,11 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/publish-conda-forge';</script>
     <script src="../_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/publish-conda-forge.html" />
@@ -209,8 +209,8 @@
                 
 
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
-                    Governance
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
                   </a>
                 </li>
                 
@@ -375,8 +375,8 @@ document.write(`
                 
 
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
-                    Governance
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
                   </a>
                 </li>
                 
@@ -458,6 +458,10 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">Add a license &amp; code of conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">Update metadata in pyproject.toml</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hatch for Existing Packages</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup-py-to-pyproject-toml.html">Migrate setup.py to a pyproject.toml using Hatch</a></li>
+</ul>
 </div>
 </nav></div>
     </div>
@@ -530,16 +534,17 @@ publish your package on conda-forge.</p>
 <p class="admonition-title">Learning Objectives</p>
 <p>In this lesson you will learn how to:</p>
 <ul class="simple">
-<li><p>How to build your package’s sdist and wheel distributions</p></li>
-<li><p>Setup an account on testPyPI (the process is similar for the real PyPI)</p></li>
-<li><p>Publish your package to PyPI</p></li>
+<li><p>Create a conda-forge yaml recipe for your package using Grayskull</p></li>
+<li><p>Submit the recipe (yaml file) to the conda-forge staged recipes repository as a pull request</p></li>
+<li><p>Maintain your conda-forge package by creating new releases for your package on PyPI</p></li>
 </ul>
 <p>Once your package is on PyPI you can then easily publish it to conda-forge
 using the <a class="reference external" href="https://conda.github.io/grayskull/">grayskull</a> tool. You do not need to build the package specifically
 for conda, conda-forge will build from your PyPI source distribution file (sdist).</p>
 </div>
 <figure class="align-default" id="pypi-conda-publication">
-<a class="reference internal image-reference" href="../_images/publish-python-package-pypi-conda.png"><img alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge." src="../_images/publish-python-package-pypi-conda.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/publish-python-package-pypi-conda.png"><img alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You take your code and turn it into distribution files (sdist and wheel) that PyPI accepts. then there is an arrow towards the PyPI repository where ou publish both distributions. From PyPI if you create a conda-forge recipe you can then publish to conda-forge." src="../_images/publish-python-package-pypi-conda.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Once you have published both package distributions (the source distribution and the wheel) to PyPI, you can then publish to conda-forge. Conda-forge requires a source distribution on PyPI in order to build your package on conda-forge. You do not need to rebuild your package to publish to conda-forge.</span><a class="headerlink" href="#pypi-conda-publication" title="Link to this image">#</a></p>
 </figcaption>
@@ -547,12 +552,13 @@ for conda, conda-forge will build from your PyPI source distribution file (sdist
 <section id="what-is-conda-forge">
 <h2>What is conda-forge?<a class="headerlink" href="#what-is-conda-forge" title="Link to this heading">#</a></h2>
 <p>conda is an open source package and environment management tool that
-can be used to install tools from the different channels within the Anaconda Cloud repository.</p>
-<p>You can think about a channel as a specific location where a group of packages are stored and can be installed from using a command such as <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">packagename</span></code>. In the case of the Anaconda cloud channels, some of these channels such as the default channel, is managed by Anaconda (the company). Only Anaconda can decide what packages are available in the default channel. However, the conda-forge (and bioconda) channel are community-managed channels.
+can be used to install tools from the different channels on Anaconda.org.</p>
+<p>You can think about a channel as a specific location where a group of packages are stored and can be installed from using a command such as <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">packagename</span></code>. In the case of conda channels, some of these channels such as the <code class="docutils literal notranslate"><span class="pre">defaults</span></code> channel, is managed by Anaconda (the company). Only Anaconda can decide what packages are available in the <code class="docutils literal notranslate"><span class="pre">defaults</span></code> channel. However, the conda-forge (and bioconda) channel are community-managed channels.
 Anyone can submit a package to these channels however they must pass a technical review in the <a class="reference external" href="https://github.com/conda-forge/staged-recipes">staged-recipes GitHub repository</a> to be published.</p>
 <p><a class="reference internal" href="../package-structure-code/publish-python-package-pypi-conda.html#about-conda"><span class="std std-ref">Learn more about conda channels here.</span></a></p>
 <figure class="align-default" id="pypi-conda-channels-2">
-<a class="reference internal image-reference" href="../_images/python-pypi-conda-channels.png"><img alt="Graphic with the title Python package repositories. Below it says anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. The top row says conda channels. Next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the Anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to PyPI and test PyPI (a testbed server for you to practice)." src="../_images/python-pypi-conda-channels.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-pypi-conda-channels.png"><img alt="Graphic with the title Python package repositories. Below it says anything hosted on PyPI can be installed using pip install. Packaging hosted on a conda channel can be installed using conda install. Below that there are two rows. The top row says conda channels. Next to it are three boxes one with conda-forge, community maintained; bioconda and then default - managed by the Anaconda team. Below that there is a row that says PyPI servers. PyPI - anyone can publish to PyPI and test PyPI (a testbed server for you to practice)." src="../_images/python-pypi-conda-channels.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Conda channels represent various repositories that you can install packages from. Because conda-forge is community maintained, anyone can submit a recipe there. PyPI is also a community maintained repository. Anyone can submit a package to PyPI and test PyPI. Unlike conda-forge there are no manual checks of packages submitted to PyPI.</span><a class="headerlink" href="#pypi-conda-channels-2" title="Link to this image">#</a></p>
 </figcaption>
@@ -569,7 +575,8 @@ Anyone can submit a package to these channels however they must pass a technical
 <section id="conda-forge-publication-steps">
 <h3>Conda-forge publication steps<a class="headerlink" href="#conda-forge-publication-steps" title="Link to this heading">#</a></h3>
 <figure class="align-default" id="publish-pypi-conda-forge">
-<a class="reference internal image-reference" href="../_images/pyopensci-python-package-pypi-to-conda-forge.png"><img alt="Image showing the steps associated with publishing to conda-forge. Check out the caption below for a detailed description." src="../_images/pyopensci-python-package-pypi-to-conda-forge.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/pyopensci-python-package-pypi-to-conda-forge.png"><img alt="Image showing the steps associated with publishing to conda-forge. Check out the caption below for a detailed description." src="../_images/pyopensci-python-package-pypi-to-conda-forge.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">The steps for publishing to conda-forge begin with publishing your Python package to PyPI. Once you have published to PyPI you can then create a yaml file recipe that can be submitted to the conda-forge staged recipes repository for review. Once that recipe is accepted, your package will get it’s on repository (known as a feedstock) on conda-forge.</span><a class="headerlink" href="#publish-pypi-conda-forge" title="Link to this image">#</a></p>
 </figcaption>
@@ -607,7 +614,7 @@ Remember that your package needs to be on PyPI before the steps below will work.
 <section id="step-1-install-grayskull">
 <h3>Step 1: Install grayskull<a class="headerlink" href="#step-1-install-grayskull" title="Link to this heading">#</a></h3>
 <p>First, <a class="reference external" href="https://conda.github.io/grayskull/user_guide.html">install grayskull</a>. You can install it using either pip:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>grayskull
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>grayskull
 </pre></div>
 </div>
 <p>or conda</p>
@@ -821,11 +828,7 @@ The home item is expected in the about section.
 </ol>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
-<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M5.5 4a2.5 2.5 0 014.607-1.346.75.75 0 101.264-.808A4 4 0 004 4v2h-.501A1.5 1.5 0 002 7.5v6A1.5 1.5 0 003.5 15h9a1.5 1.5 0 001.5-1.5v-6A1.5 1.5 0 0012.5 6h-7V4zm-.75 3.5H3.5v6h9v-6H4.75z"></path></svg></span>Conda-forge checklist help<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Conda-forge checklist help</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <h3 class="rubric" id="conda-forge-staged-recipes-pull-request-checklist">Conda-forge Staged-recipes Pull Request Checklist</h3>
 <p class="sd-card-text">When you submit your package to conda-forge, the pull request template includes a list of checks that you want to ensure you have covered.</p>
 <p class="sd-card-text">Below we break down each element of that list.</p>
@@ -856,9 +859,9 @@ The home item is expected in the about section.
 </div></blockquote>
 <p class="sd-card-text"><strong>Translation:</strong> A static library refers to a copy of a package built into your package. If your package is a pure Python package, then you can check that your package does not ship static libraries as this does not apply to you.</p>
 <p class="sd-card-text">The pyOpenSci tutorials are all pure Python and as such do not use static libraries in a linked or shipped (included in the package distribution) format.</p>
-<p class="sd-card-text">If your package has a more complex builds that includes
+<p class="sd-card-text">If your package has a more complex build that includes
 links to extensions written in other languages such as
-C++, then be sure that include the proper LICENSE(s) for those extensions in your metadata.</p>
+C++, then be sure to include the proper licenses for those extensions in your metadata.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p class="sd-card-text">If you want to learn more about static libraries, then <a class="reference external" href="https://pypackaging-native.github.io/background/compilation_concepts/#shared-vs-static-libraries">this overview</a> might help.</p>
@@ -903,7 +906,8 @@ build:
 </div>
 </details><p>Once you create your pull request, a suite of CI actions will run that build and test the build of your package. A conda-forge maintainer will work with you to get your recipe in good shape and merged.</p>
 <figure class="align-default" id="conda-forge-pr-build">
-<a class="reference internal image-reference" href="../_images/conda-forge-staged-recipes-ci.png"><img alt="Image showing the 5 CI tasks that will run against your package in the GitHub interface after you'ce created a pull request." src="../_images/conda-forge-staged-recipes-ci.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/conda-forge-staged-recipes-ci.png"><img alt="Image showing the 5 CI tasks that will run against your package in the GitHub interface after you'ce created a pull request." src="../_images/conda-forge-staged-recipes-ci.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Wait until all of the CI steps in your pull request have run. At that point your pull request is ready for review by a conda-forge maintainer.</span><a class="headerlink" href="#conda-forge-pr-build" title="Link to this image">#</a></p>
 </figcaption>
@@ -927,17 +931,17 @@ We cover that next.</p>
 <section id="maintaining-your-conda-forge-feedstock">
 <h2>Maintaining your conda-forge feedstock<a class="headerlink" href="#maintaining-your-conda-forge-feedstock" title="Link to this heading">#</a></h2>
 <p>Every time you create a new release on PyPI, the conda-forge bots will recognize the release and will rebuild the newly released version of your package. This process may take a day or two to complete so be patient.</p>
-<p>Once the conda-forge build it complete, all of the maintainers of your conda-forge feedstock will get a ping on GitHub that a new pull request has been opened.</p>
+<p>Once the conda-forge build is complete, all of the maintainers of your conda-forge feedstock will get a ping on GitHub that a new pull request has been opened.</p>
 <p>Review the pull request. If all tests are passing, you can merge it. Shortly after merging your pull request, the conda-forge release will be available for users to install:</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">yourpackage</span></code></p>
 </section>
 <section id="wrap-up">
 <h2><i class="fa-solid fa-hands-bubbles"></i> Wrap up<a class="headerlink" href="#wrap-up" title="Link to this heading">#</a></h2>
-<p>If you have walked through this entire tutorial series you have now:</p>
+<p>If you have walked through this entire tutorial series you will now:</p>
 <ol class="arabic simple">
 <li><p>Understand <a class="reference internal" href="intro.html"><span class="std std-doc">what a Python package is </span></a></p></li>
 <li><p>Know how to <a class="reference internal" href="installable-code.html"><span class="std std-doc">make your code installable</span></a> into Python environments</p></li>
-<li><p>Know how to create a pyproject.toml file, a README file, and a License and code of conduct.</p></li>
+<li><p>Know how to create a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file, a <code class="docutils literal notranslate"><span class="pre">README</span></code> file, and a <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> and code of conduct.</p></li>
 <li><p>Know how to <a class="reference internal" href="publish-pypi.html"><span class="std std-doc">publish your package to PyPI</span></a> and</p></li>
 <li><p>Know how to publish your package to conda-forge</p></li>
 </ol>

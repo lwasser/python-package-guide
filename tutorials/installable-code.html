@@ -42,7 +42,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=ba8f538e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -51,18 +51,18 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/installable-code';</script>
     <script src="../_static/matomo.js?v=918da087"></script>
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/installable-code.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Publish your Python package to PyPI" href="publish-pypi.html" />
-    <link rel="prev" title="Get to know hatch" href="get-to-know-hatch.html" />
+    <link rel="prev" title="Get to know Hatch" href="get-to-know-hatch.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -209,8 +209,8 @@
                 
 
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
-                    Governance
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
                   </a>
                 </li>
                 
@@ -375,8 +375,8 @@ document.write(`
                 
 
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/governance">
-                    Governance
+                  <a class="nav-link dropdown-item nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
                   </a>
                 </li>
                 
@@ -458,6 +458,10 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">Add a license &amp; code of conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pyproject-toml.html">Update metadata in pyproject.toml</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hatch for Existing Packages</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup-py-to-pyproject-toml.html">Migrate setup.py to a pyproject.toml using Hatch</a></li>
+</ul>
 </div>
 </nav></div>
     </div>
@@ -528,7 +532,8 @@ bare minimum elements needed to be installable into a Python environment.</p>
 <p>Making your code installable is an important steps towards creating a full
 Python package that is directly installable from PyPI.</p>
 <figure class="align-default" id="code-to-python-package">
-<a class="reference internal image-reference" href="../_images/code-to-python-package.png"><img alt="Diagram showing the basic steps to creating an installable package. There are 4 boxes with arrows pointing towards the right. The boxes read, your code, create package structure, add metadata to pyproject.toml and pip install package." src="../_images/code-to-python-package.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/code-to-python-package.png"><img alt="Diagram showing the basic steps to creating an installable package. There are 4 boxes with arrows pointing towards the right. The boxes read, your code, create package structure, add metadata to pyproject.toml and pip install package." src="../_images/code-to-python-package.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">A basic installable package needs a few things: code, a <a class="reference external" href="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html">specific package file structure</a> and a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> containing your package’s name and version. Once you have these items in the correct directory structure, you can pip install your package into any environment on your computer. You will learn how to create a basic installable package in this lesson.</span><a class="headerlink" href="#code-to-python-package" title="Link to this image">#</a></p>
 </figcaption>
@@ -555,7 +560,8 @@ environment and shell on your computer. You will also need to have <a class="ref
 </ul>
 </div>
 <figure class="align-default" id="packages-environment">
-<a class="reference internal image-reference" href="../_images/environment-package-install.png"><img alt="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your Python environment. It them lists your-package along with a few other core packages such as Matplotlib, NumPy, Pandas, Xarray and GeoPandas." src="../_images/environment-package-install.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/environment-package-install.png"><img alt="This diagram has two smaller boxes with arrows pointing to the right to a Python environment. The small boxes read your-package and pip install package. The environment box on the right reads - your Python environment. It them lists your-package along with a few other core packages such as Matplotlib, NumPy, Pandas, Xarray and GeoPandas." src="../_images/environment-package-install.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Making your code installable is the first step towards creating a publishable Python package. Once your code is installable, it is a Python package and can be added to any Python environment on your computer and imported in the same way that you might import a package such as Pandas or GeoPandas.
 If your code is on GitHub or GitLab you can also install it directly from there.</span><a class="headerlink" href="#packages-environment" title="Link to this image">#</a></p>
@@ -624,11 +630,19 @@ installable including:</p>
 <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file and <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> files.
 If you try to pip install a package with no <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> you will get the following error:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GitHub/pyospackage/testme
-➜<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
+➜<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
 ERROR:<span class="w"> </span>Directory<span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>installable.
 Neither<span class="w"> </span><span class="s1">&#39;setup.py&#39;</span><span class="w"> </span>nor<span class="w"> </span><span class="s1">&#39;pyproject.toml&#39;</span><span class="w"> </span>found.
 </pre></div>
 </div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Note about <code class="docutils literal notranslate"><span class="pre">setup.py</span></code></p>
+<p>If your project already defines a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file, Hatch can be used to automatically create the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
+<ul class="simple">
+<li><p>See <a class="reference internal" href="setup-py-to-pyproject-toml.html"><span class="std std-doc">Using Hatch to Migrate setup.py to a pyproject.toml
+</span></a></p></li>
+</ul>
 </div>
 </section>
 </section>
@@ -838,13 +852,13 @@ file.</p>
 <p>Edit the file as follows:</p>
 <ol class="arabic simple">
 <li><p>Delete <code class="docutils literal notranslate"><span class="pre">dynamic</span> <span class="pre">=</span> <span class="pre">[&quot;version&quot;]</span></code>: This sets up dynamic versioning based on tags stored in your git commit history. We will walk through implementing this in a later lesson.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">version</span> <span class="pre">=</span> <span class="pre">0.1.0</span></code> in the place of  <code class="docutils literal notranslate"><span class="pre">dynamic</span> <span class="pre">=</span> <span class="pre">[&quot;version&quot;]</span></code> which you just deleted. This sets up manual versioning.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">version</span> <span class="pre">=</span> <span class="pre">&quot;0.1&quot;</span></code> in the place of  <code class="docutils literal notranslate"><span class="pre">dynamic</span> <span class="pre">=</span> <span class="pre">[&quot;version&quot;]</span></code> which you just deleted. This sets up manual versioning.</p></li>
 <li><p>Fill in the description if it doesn’t already exist.</p></li>
 </ol>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
 <span class="c1"># dynamic = [&quot;version&quot;] &lt;- replace this...</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="c1"># with this</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1&quot;</span><span class="w"> </span><span class="c1"># with this</span>
 <span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A simple Python package that adds numbers together&#39;</span><span class="w"> </span><span class="c1"># Add a description of your package if that is not already populated</span>
 </pre></div>
 </div>
@@ -866,9 +880,10 @@ However, if you wish, you can clean it up a bit.</p>
 <p>To begin:</p>
 <ul class="simple">
 <li><p>Remove support for Python 3.8</p></li>
+<li><p>Within the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> table, update <code class="docutils literal notranslate"><span class="pre">requires-python</span> <span class="pre">=</span> <span class="pre">&quot;&gt;3.8&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">requires-python</span> <span class="pre">=</span> <span class="pre">&quot;&gt;3.9&quot;</span></code></p></li>
 </ul>
-<p>Also because you are creating a pure Python package, you can
-in this lesson, you can remove the following classifiers:</p>
+<p>Since you are creating a pure Python package in this lesson,
+you can remove the following classifiers:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="s2">&quot;Programming Language :: Python :: Implementation :: CPython&quot;</span><span class="p">,</span>
 <span class="s2">&quot;Programming Language :: Python :: Implementation :: PyPy&quot;</span><span class="p">,</span>
@@ -882,7 +897,7 @@ in this lesson, you can remove the following classifiers:</p>
 
 <span class="k">[project]</span>
 <span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pyospackage&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1&quot;</span>
 <span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A python package that adds numbers together.&#39;</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
 <span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.9&quot;</span>
@@ -953,9 +968,9 @@ Obtaining<span class="w"> </span>file:///Users/leahawasser/Documents/GitHub/pyos
 </pre></div>
 </div>
 <div class="tip admonition">
-<p class="admonition-title">What does <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> do?</p>
-<p>Let’s break down <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> installs your package into the current active
+<p class="admonition-title">What does <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> do?</p>
+<p>Let’s break down <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> installs your package into the current active
 Python environment in <strong>editable mode</strong> (<code class="docutils literal notranslate"><span class="pre">-e</span></code>). Installing your package in
 editable mode, allows you to work on your code and then test the updates
 interactively in your favorite Python interface. One important caveat of editable mode is that every time you update your code, you may need to restart Python.</p>
@@ -994,7 +1009,7 @@ nox<span class="w">                           </span><span class="m">2021</span>
 numpy<span class="w">                         </span><span class="m">1</span>.24.2
 packaging<span class="w">                     </span><span class="m">23</span>.0
 pandas<span class="w">                        </span><span class="m">1</span>.5.3
-pyosPackage<span class="w">                   </span><span class="m">0</span>.1.0<span class="w">          </span>/Users/yourusername/path/here/pyosPackage
+pyosPackage<span class="w">                   </span><span class="m">0</span>.1<span class="w">            </span>/Users/yourusername/path/here/pyosPackage
 ...
 ...
 ...
@@ -1019,7 +1034,7 @@ Type<span class="w"> </span><span class="s2">&quot;help&quot;</span>,<span class
 <p class="admonition-title">Installing packages from GitHub</p>
 <p>If you wish to share your code without publishing to PyPI you can
 always install packages directly from GitHub using the syntax:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/user/repo.git@branch_or_tag
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/user/repo.git@branch_or_tag
 </pre></div>
 </div>
 <p>To make your package GitHub installable, you can:</p>
@@ -1030,7 +1045,7 @@ always install packages directly from GitHub using the syntax:</p>
 </ol>
 <p>For instance below you install the pyospackage from the main branch of the
 pyOpenSci repository.</p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+https://github.com/user/repo.git&#64;branch_or_tag</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+https://github.com/user/repo.git&#64;branch_or_tag</span></code></p>
 </div>
 </section>
 <section id="congratulations-you-created-your-first-python-package">
@@ -1092,7 +1107,7 @@ into any Python environment.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Get to know hatch</p>
+        <p class="prev-next-title">Get to know Hatch</p>
       </div>
     </a>
     <a class="right-next"
