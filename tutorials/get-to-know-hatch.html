@@ -42,8 +42,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=ba8f538e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=7c98ed1a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -57,7 +57,7 @@
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/get-to-know-hatch';</script>
-    <script src="../_static/matomo.js?v=918da087"></script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/get-to-know-hatch.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -582,6 +582,17 @@ however, if you prefer another method, check out the <a class="reference externa
 </div>
 </div>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Hatch can also be installed directly using <a class="reference external" href="https://hatch.pypa.io/latest/install/#pip">pip</a> or <a class="reference external" href="https://hatch.pypa.io/latest/install/#conda">conda</a>. We encourage you to
+follow the instructions above because we have found that the Hatch installers
+for Windows and Mac are the easiest and most efficient.</p>
+<p>Our Linux users have found success installing Hatch with pipx if they already
+use apt install.</p>
+<p>Both approaches (using a graphical installer on Windows/Mac and pipx) ensure
+that you have Hatch installed globally. A global install means that Hatch is
+available across all of your Python environments on your computer.</p>
+</div>
 <section id="check-that-hatch-installed-correctly">
 <h3>Check that hatch installed correctly<a class="headerlink" href="#check-that-hatch-installed-correctly" title="Link to this heading">#</a></h3>
 <p>Once you have completed the installation instructions above, you can open your
@@ -592,17 +603,6 @@ terminal, and make sure that Hatch installed correctly using the command below:<
 </div>
 <p><em>Note the version number output of <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">--version</span></code> will likely  be
 different from the output above in this tutorial.</em></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Hatch can also be installed directly using pip or conda. We encourage you to
-follow the instructions above because we have found that the Hatch installers
-for Windows and Mac are the easiest and most efficient.</p>
-<p>Our Linux users have found success installing Hatch with pipx if they already
-use apt install.</p>
-<p>Both approaches (using a graphical installer on Windows/Mac and pipx) ensure
-that you have Hatch installed globally. A global install means that Hatch is
-available across all of your Python environments on your computer.</p>
-</div>
 </section>
 </section>
 <section id="configure-hatch">
@@ -694,7 +694,7 @@ use it for this tutorial series.</p>
 <p>Once you have completed the steps above run the following command in your shell.</p>
 <p><code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">config</span> <span class="pre">show</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">config</span> <span class="pre">show</span></code> will print out the contents of your <code class="docutils literal notranslate"><span class="pre">config.toml</span></code> file in
-your shell. look at the values and ensure that your name, email is set. Also
+your shell. Look at the values and ensure that your name, email is set. Also
 make sure that <code class="docutils literal notranslate"><span class="pre">tests=false</span></code>.</p>
 </section>
 </section>
@@ -709,7 +709,7 @@ and maintaining your Python package easier.</p>
 <p><a class="reference internal" href="../package-structure-code/python-package-build-tools.html#hatch"><span class="std std-ref">More on Hatch here</span></a></p>
 <p>A few features that Hatch offers</p>
 <ol class="arabic simple">
-<li><p>it will convert metadata stored in a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> or <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file to a pyproject.toml file for you (see <a class="reference internal" href="setup-py-to-pyproject-toml.html"><span class="std std-doc">Migrating setup.py to pyproject.toml using Hatch</span></a>)</p></li>
+<li><p>It will convert metadata stored in a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> or <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file to a pyproject.toml file for you (see <a class="reference internal" href="setup-py-to-pyproject-toml.html"><span class="std std-doc">Migrating setup.py to pyproject.toml using Hatch</span></a>)</p></li>
 <li><p>It will help you by storing configuration information for publishing to PyPI after you’ve entered it once.</p></li>
 </ol>
 <p>Use <code class="docutils literal notranslate"><span class="pre">hatch</span> <span class="pre">-h</span></code> to see all of the available commands.</p>
@@ -827,6 +827,17 @@ and maintaining your Python package easier.</p>
 <div class="bd-footer__inner bd-page-width">
   
     <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
       
         <div class="footer-item">
 

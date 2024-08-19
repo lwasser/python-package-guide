@@ -42,8 +42,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=ba8f538e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=7c98ed1a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -57,7 +57,7 @@
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/python-package-versions';</script>
-    <script src="../_static/matomo.js?v=918da087"></script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-versions.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -537,7 +537,7 @@ with how and when you update your package versions is important as:</p>
 <li><p>It helps your users (which might include other developers that depend on your package) understand the extent of changes to a package.</p></li>
 <li><p>It helps your development team make decisions about when to
 bump a package version based on standard rules.</p></li>
-<li><p>Consistent version increases following semver rules mean that values of your package version explain the extent of the changes made in the code base from version to version. thus your package version numbers become “expressive” in the same way that naming code variables well can <a class="reference external" href="https://medium.com/&#64;daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa">make code expressive</a>.</p></li>
+<li><p>Consistent version increases following semver rules mean that values of your package version explain the extent of the changes made in the code base from version to version. Thus your package version numbers become “expressive” in the same way that naming code variables well can <a class="reference external" href="https://medium.com/&#64;daniel.oliver.king/writing-expressive-code-b69ef7a5a2fa">make code expressive</a>.</p></li>
 </ol>
 <div class="admonition-a-note-about-versioning admonition">
 <p class="admonition-title">A note about versioning</p>
@@ -599,7 +599,7 @@ versions. Some of these tools are built into or work with your chosen
 <p>Below, we provide an overview of these tools.</p>
 <!--
 If you are on the fence about what tool to use, we suggest
-that you use `setuptools-scm`. thinking now PDM or hatch + hatch_vcs  -->
+that you use `setuptools-scm`. Thinking now PDM or hatch + hatch_vcs  -->
 <p>There are three general groups of tools that you can use to manage
 package versions:</p>
 <ol class="arabic simple">
@@ -624,7 +624,7 @@ build that:</p>
 <p class="admonition-title">Note</p>
 <p>Bumping a package version refers to the step of increasing the package
 version after a set number of changes have been made to it. For example,
-you might bump from version 0.8 to 0.9 of a package. or from 0.9 to 1.0.</p>
+you might bump from version 0.8 to 0.9 of a package or from 0.9 to 1.0.</p>
 <p>Using semantic versioning, there are three main “levels”
 of versions that you might consider:</p>
 <p>Major, minor and patch. These are described in more detail below.</p>
@@ -678,7 +678,7 @@ version in a single file managed by Hatch provides
 your package with a “single source of truth” value for the version
 number. This in turn eliminates potential error associated with
 manually updating your package’s version.</p>
-<p>When you (or your CI system) build your package, hatch checks the current tag number for your package. if it has increased, it will update
+<p>When you (or your CI system) build your package, hatch checks the current tag number for your package. If it has increased, it will update
 the <strong>_version.py</strong> file with the new value.</p>
 <p>Thus, when you create a new tag or a new release with a tag and build your package, Hatch will access the new tag value and use it to update
 your package version.</p>
@@ -937,6 +937,17 @@ control tag, is used to trigger a version update.  -->
 <div class="bd-footer__inner bd-page-width">
   
     <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
       
         <div class="footer-item">
 

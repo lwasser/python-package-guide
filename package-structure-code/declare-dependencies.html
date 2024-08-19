@@ -14,9 +14,9 @@
 <meta property="og:description" content="A Python package dependency refers to an external package or software that your Python project requires to function properly. Learn how to add different types of dependencies to your Python package." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_declare-dependencies_09e389b5.png" />
-<meta property="og:image:alt" content="What is a package dependency?: A Python package dependency refers to an external package or software that your Python project: needs to function properly., r..." />
-<meta name="description" content="What is a package dependency?: A Python package dependency refers to an external package or software that your Python project: needs to function properly., requires if someone wants to develop / wo..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_declare-dependencies_f3c95701.png" />
+<meta property="og:image:alt" content="What is a package dependency?: A Python package dependency refers to an external package or software that your Python project: Needs to function properly., R..." />
+<meta name="description" content="What is a package dependency?: A Python package dependency refers to an external package or software that your Python project: Needs to function properly., Requires if someone wants to develop / wo..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Python Package Dependencies &#8212; Python Packaging Guide</title>
@@ -42,8 +42,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=ba8f538e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=7c98ed1a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -57,7 +57,7 @@
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/declare-dependencies';</script>
-    <script src="../_static/matomo.js?v=918da087"></script>
+    <script src="../_static/matomo.js?v=5a92784f"></script>
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/package-structure-code/declare-dependencies.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -520,9 +520,9 @@ document.write(`
 <p>A Python package dependency refers to an external package or
 software that your Python project:</p>
 <ol class="arabic simple">
-<li><p>needs to function properly.</p></li>
-<li><p>requires if someone wants to develop / work on improving your package locally or</p></li>
-<li><p>requires if a user wants to add additional functionality (that is not core) to your package</p></li>
+<li><p>Needs to function properly.</p></li>
+<li><p>Requires if someone wants to develop / work on improving your package locally or</p></li>
+<li><p>Requires if a user wants to add additional functionality (that is not core) to your package</p></li>
 </ol>
 <p>A dependency is not part of your project’s codebase. It is a package or software that is called
 within the code of your project or during development of your package.</p>
@@ -686,7 +686,7 @@ order to upload your project to PyPI</p>
 <section id="install-dependency-groups">
 <h3>Install dependency groups<a class="headerlink" href="#install-dependency-groups" title="Link to this heading">#</a></h3>
 <figure class="align-default" id="id3">
-<img alt="Diagram showing a ven diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. it them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov" src="../_images/python-package-dependencies.png" />
+<img alt="Diagram showing a ven diagram with three sections representing the dependency groups listed above - docs feature and tests. In the center it says your-package and lists the core dependencies of that package seaborn and numpy. To the right are two arrows. The first shows the command python - m pip install your-package. It them shows how installing your package that way installs only the package and the two core dependencies into a users environment. Below is a second arrow with python -m pip install youPackage[tests]. This leads to an environment with both the package dependencies - your-package, seaborn and numpy and also the tests dependencies including pytest and pytest-cov" src="../_images/python-package-dependencies.png" />
 <figcaption>
 <p><span class="caption-text">When a user installs your package locally using python -m pip install your-package only your package and it’s core dependencies get installed. When they install your package <code class="docutils literal notranslate"><span class="pre">[tests]</span></code> pip will install both your package and its core dependencies plus any of the dependencies listed within the tests array of your <code class="docutils literal notranslate"><span class="pre">[optional.dependencies]</span></code> table.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
@@ -912,6 +912,17 @@ Poetry in Read the Docs, <a class="reference external" href="https://docs.readth
 <div class="bd-footer__inner bd-page-width">
   
     <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+  pyOpensci is dedicated to creating a welcoming, supportive and diverse
+  community around the open source Python tools that drive open science. Our
+  <a
+    href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+    target="_blank"
+    >Code of Conduct</a
+  >
+  defines expected behavior and guidelines that help create such a community.
+</p></div>
       
         <div class="footer-item">
 
