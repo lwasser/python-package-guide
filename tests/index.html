@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/tests/index.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="Tests are an important part of your Python package because they provide a set of checks that ensure that your package is functioning how you expect it to. In this section you will learn more about ..." />
+<meta property="og:description" content="Tests are an important part of your Python package because they provide a set of checks that ensure that your package is functioning how you expect it to. In this section, you will learn more about..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
 <meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_tests_index_187bf375.png" />
 <meta property="og:image:alt" content="Tests are an important part of your Python package because they provide a set of checks that ensure that your package is functioning how you expect it to. In..." />
-<meta name="description" content="Tests are an important part of your Python package because they provide a set of checks that ensure that your package is functioning how you expect it to. In this section you will learn more about ..." />
+<meta name="description" content="Tests are an important part of your Python package because they provide a set of checks that ensure that your package is functioning how you expect it to. In this section, you will learn more about..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Tests and data for your Python package &#8212; Python Packaging Guide</title>
@@ -27,8 +27,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -38,8 +38,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -48,10 +48,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=3cb6c64c" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -180,8 +180,17 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
                     More
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
@@ -339,6 +348,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-external" href="https://www.pyopensci.org">
     pyOpenSci Website
   </a>
@@ -420,6 +436,7 @@
 <li class="toctree-l1"><a class="reference internal" href="test-types.html">Test types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="run-tests.html">Run tests locally</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tests-ci.html">Run tests online (using CI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-cov.html">Code coverage</a></li>
 </ul>
 </div>
 </nav></div>
@@ -427,9 +444,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -473,12 +495,12 @@
                 <article class="bd-article">
                   
   <section id="tests-and-data-for-your-python-package">
-<h1>Tests and data for your Python package<a class="headerlink" href="#tests-and-data-for-your-python-package" title="Link to this heading">#</a></h1>
+<span id="tests-intro"></span><h1>Tests and data for your Python package<a class="headerlink" href="#tests-and-data-for-your-python-package" title="Link to this heading">#</a></h1>
 <p>Tests are an important part of your Python package because they
 provide a set of checks that ensure that your package is
 functioning how you expect it to.</p>
-<p>In this section you will learn more about the importance of writing
-tests for your Python package and how you can setup infrastructure
+<p>In this section, you will learn more about the importance of writing
+tests for your Python package and how you can set up infrastructure
 to run your tests both locally and on GitHub.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 text-center docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-3 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
@@ -593,13 +615,13 @@ and different operating systems. Learn about setting up tests to run in Continuo
 </div>
 
   <div class="sidebar-secondary-item">
-
-  <div class="tocsection sourcelink">
-    <a href="../_sources/tests/index.md.txt">
-      <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-  </div>
-</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/tests/index.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
 
 </div></div>
               
@@ -614,8 +636,8 @@ and different operating systems. Learn about setting up tests to run in Continuo
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">

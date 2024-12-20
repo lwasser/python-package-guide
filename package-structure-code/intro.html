@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Python package structure information" />
+<meta property="og:title" content="Python Package Structure" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/intro.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to support building and publishing your packa..." />
+<meta property="og:description" content="This section provides guidance on your Python package’s structure, code format, and style. It also reviews the various packaging tools you can use to build and publish your Python package. If you w..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_intro_999f63d6.png" />
-<meta property="og:image:alt" content="This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to su..." />
-<meta name="description" content="This section provides guidance on your Python package’s structure, code formats and style. It also reviews the various packaging tools that you can use to support building and publishing your packa..." />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_intro_48974105.png" />
+<meta property="og:image:alt" content="This section provides guidance on your Python package’s structure, code format, and style. It also reviews the various packaging tools you can use to build a..." />
+<meta name="description" content="This section provides guidance on your Python package’s structure, code format, and style. It also reviews the various packaging tools you can use to build and publish your Python package. If you w..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Python package structure information &#8212; Python Packaging Guide</title>
+    <title>Python Package Structure &#8212; Python Packaging Guide</title>
   
   
   
@@ -27,8 +27,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -38,8 +38,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -48,10 +48,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=3cb6c64c" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -180,8 +180,17 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
                     More
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
@@ -339,6 +348,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
+    CI/CD
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-external" href="https://www.pyopensci.org">
     pyOpenSci Website
   </a>
@@ -413,7 +429,7 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Package structure &amp; code style</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Build Your Package</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
@@ -423,7 +439,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publishing a package</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish with Conda / PyPI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">Package versions</a></li>
@@ -435,9 +451,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -463,7 +484,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python package structure information</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python Package Structure</span></li>
   </ul>
 </nav>
 </div>
@@ -480,15 +501,21 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="python-package-structure-information">
-<h1>Python package structure information<a class="headerlink" href="#python-package-structure-information" title="Link to this heading">#</a></h1>
-<p>This section provides guidance on your Python package’s structure, code formats
-and style. It also reviews the various packaging tools that you can use to
-support building and publishing your package.</p>
+  <section id="python-package-structure">
+<h1>Python Package Structure<a class="headerlink" href="#python-package-structure" title="Link to this heading">#</a></h1>
+<p>This section provides guidance on your Python package’s structure, code format,
+and style. It also reviews the various <a class="reference internal" href="python-package-build-tools.html"><span class="doc std std-doc">packaging tools</span></a> you can use to
+<a class="reference internal" href="python-package-distribution-files-sdist-wheel.html"><span class="doc std std-doc">build</span></a> and <a class="reference internal" href="publish-python-package-pypi-conda.html"><span class="doc std std-doc">publish</span></a> your Python package.</p>
+<p>If you want end-to-end tutorials, check out our tutorial series that starts by introducing <a class="reference internal" href="../tutorials/intro.html#what-is-a-package"><span class="std std-ref">what a Python package is</span></a>.</p>
 <p>If you are confused by Python packaging, you are not alone! The good news is
-there are some great modern packaging tools that ensure that you’re following
-best practices. Here, we review tool features and suggest tools that might be
-best fitted for your workflow.</p>
+that some great modern packaging tools ensure you follow
+best practices. Here, we review tool features and suggest tools you can use
+for your Python packaging workflow.</p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-success sd-rounded-pill float-left reference external" href="/tutorials/intro"><span>Checkout our beginning-to-end create a Python package tutorials</span></a></p>
+<div class="admonition-how-this-content-is-developed admonition">
+<p class="admonition-title">How this content is developed</p>
+<p>All of the content in this guide has been vetted by community members, including maintainers and developers of the core packaging tools.</p>
+</div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 text-center docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-column docutils">
@@ -710,13 +737,13 @@ if you are looking for pyOpenSci’s Python package review requirements!</p>
 </div>
 
   <div class="sidebar-secondary-item">
-
-  <div class="tocsection sourcelink">
-    <a href="../_sources/package-structure-code/intro.md.txt">
-      <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-  </div>
-</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/package-structure-code/intro.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
 
 </div></div>
               
@@ -731,8 +758,8 @@ if you are looking for pyOpenSci’s Python package review requirements!</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
