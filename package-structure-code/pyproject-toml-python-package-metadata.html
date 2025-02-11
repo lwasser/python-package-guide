@@ -41,7 +41,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -511,8 +511,6 @@
 
 what's missing
 
-- missing explanation of `requires-python =` in this page -- discussed in slack with pradyun --
-
 ::: -->
 <div class="todo admonition">
 <p class="admonition-title">Important pyproject.toml take aways</p>
@@ -643,7 +641,7 @@ what dependencies your package requires.</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">[project.scripts]</span></code> (Entry points):</strong> Entry points are optional. If you have a command line tool that runs a specific script hosted in your package, you may include an entry point to call that script directly at the command line (rather than at the Python shell).</p>
 <ul>
-<li><p>Here is an example of<a class="reference external" href="https://github.com/pyOpenSci/update-web-metadata/blob/main/pyproject.toml#L60"> a package that has entry point script</a>s. Notice that there are several core scripts defined in that package that perform sets of tasks. The pyOpenSci is using those scripts to process their metadata.</p></li>
+<li><p>Here is an example of<a class="reference external" href="https://github.com/pyOpenSci/pyosMeta/blob/main/pyproject.toml#L60">a package that has entry point script</a>s. Notice that there are several core scripts defined in that package that perform sets of tasks. The pyOpenSci is using those scripts to process their metadata.</p></li>
 </ul>
 </li>
 <li><p><strong>Dynamic Fields:</strong> if you have fields that are dynamically populated. One example of this is if you are using scm / version control based version with tools like <code class="docutils literal notranslate"><span class="pre">setuptooms_scm</span></code>, then you might use the dynamic field, such as version (using scm) <strong>dynamic = [“version”]</strong></p></li>
@@ -900,7 +898,7 @@ of values. It has two keys that specify the build backend API and containing pac
 
   <p class="copyright">
     
-      © Copyright 2024, pyOpenSci.
+      © Copyright 2025, pyOpenSci.
       <br/>
     
   </p>
