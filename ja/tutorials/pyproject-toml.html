@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=c07158ed" />
+    <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=f8185577" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -66,7 +66,7 @@
     <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/tutorials/pyproject-toml.html" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="Command Line Reference Guide" href="command-line-reference.html" />
+    <link rel="next" title="コマンドラインリファレンスガイド" href="command-line-reference.html" />
     <link rel="prev" title="Pythonパッケージに LICENSE と CODE_OF_CONDUCT を追加します。" href="add-license-coc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="ja"/>
@@ -479,9 +479,9 @@
 <li class="toctree-l1"><a class="reference internal" href="add-license-coc.html">ライセンスと行動規範の追加</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">pyproject.tomlのメタデータを更新する</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference Guides</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">リファレンスガイド</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">Command Line Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command-line-reference.html">コマンドラインリファレンスガイド</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">既存パッケージ用Hatch</span></p>
 <ul class="nav bd-sidenav">
@@ -584,7 +584,7 @@
 </ul>
 </li>
 <li><p class="sd-card-text">ユーザーがPyPIであなたのプロジェクトを見つけやすくなるので、 <code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルにもっとメタデータを追加するべきです。また、インストーラがあなたのパッケージのインストール方法を理解しやすくなります。</p></li>
-<li><p class="sd-card-text">When you are adding classifiers to the <strong>[project]</strong> table, only use valid values from <a class="reference external" href="https://PyPI.org/classifiers/">PyPI's classifier page</a>. An invalid value here will raise an error when you build and publish your package on PyPI.</p></li>
+<li><p class="sd-card-text"><strong>[project]</strong> テーブルに分類を追加するときは、 <a class="reference external" href="https://PyPI.org/classifiers/">PyPIの分類ページ</a> にある有効な値のみを使用してください。 ここで無効な値を指定すると、パッケージをビルドするときやPyPIに公開するときにエラーが発生します。</p></li>
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイル内のテーブルには特定の順番はありません。 しかし、フィールドは正しいテーブルに配置する必要があります。 例えば <code class="docutils literal notranslate"><span class="pre">requires</span> <span class="pre">=</span></code> は常に <strong>[build-system]</strong> テーブルにある必要があります。</p></li>
 <li><p class="sd-card-text"><strong>[build-system]</strong> テーブルを <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> ファイルの先頭に含めることをお勧めします。</p></li>
 </ol>
@@ -799,6 +799,12 @@
 <section id="step-3-specify-python-version-with-requires-python">
 <h3>ステップ 3: <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> でPythonのバージョンを指定します<a class="headerlink" href="#step-3-specify-python-version-with-requires-python" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> の <code class="docutils literal notranslate"><span class="pre">[project]</span></code> テーブルに <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> フィールドを追加します。 <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> フィールドは、pipがあなたのパッケージがサポートする Pythonのバージョンを特定するのに役立ちます。 単一の値に設定されます。 <a class="reference external" href="https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata-requires-python">パッケージング仕様</a> では、 <code class="docutils literal notranslate"><span class="pre">requires-python</span></code> をバージョン指定の文字列として定義している。ほとんどのプロジェクトは、そのパッケージがサポートする最も古いPythonのバージョンを指定します。いくつかの高度なケースでは、どの将来のPythonバージョンがサポートされるかを示す上限が設定されます。</p>
+<div class="tip admonition">
+<p class="admonition-title">But how do I figure out which Python versions I should support?</p>
+<p>Good question. The Python developer guide provides a <a class="reference external" href="https://devguide.python.org/versions/">status page</a> (and a handy visualization) that explains the status of each Python release. Python releases go through several different phases that are explained in <a class="reference external" href="https://peps.python.org/pep-0602/">PEP 602</a>.</p>
+<p>We recommend that you use the latest Python release in the <strong>bugfix</strong> phase. If your Python release is in the <strong>security</strong> phase, we recommend migrating to a newer version of Python.</p>
+<p><a class="reference external" href="https://scientific-python.org/specs/spec-0000/">SPEC 0</a> of the Scientific Python project suggests a common schedule for dependencies, including Python release versions, and is also worth considering for your project.</p>
+</div>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
 <span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hatchling&quot;</span><span class="p">]</span>
 <span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hatchling.build&quot;</span>
@@ -1190,7 +1196,7 @@
        title="次ページ">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">次へ</p>
-        <p class="prev-next-title">Command Line Reference Guide</p>
+        <p class="prev-next-title">コマンドラインリファレンスガイド</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
