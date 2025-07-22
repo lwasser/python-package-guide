@@ -42,10 +42,10 @@
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/pyos.css?v=94b124cf" />
+    <link rel="stylesheet" type="text/css" href="_static/pyos.css?v=676a615a" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -675,6 +675,12 @@
 </pre></div>
 </div>
 <p>ローカルに構築されたガイドを見るには、ブラウザで <code class="docutils literal notranslate"><span class="pre">_build/html/index.html</span></code> ファイルを開いてください。</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs-linkcheck</span></code>: this session checks that links in documentation work</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-e<span class="w"> </span>docs-linkcheck
+</pre></div>
+</div>
+<p>If the tests fail, you will see logs in the terminal and in <code class="docutils literal notranslate"><span class="pre">_build/linkcheck_output/output.txt</span></code>.</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">docs-test</span></code>: このセッションでは、ガイドのテストを実行します。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-e<span class="w"> </span>docs-test
