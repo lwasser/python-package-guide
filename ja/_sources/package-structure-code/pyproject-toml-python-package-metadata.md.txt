@@ -173,7 +173,6 @@ what dependencies your package requires.
   - Development Status
   - Intended Audience
   - Topic
-  - License
   - Programming language
 
 ### Advanced options in the pyproject.toml file
@@ -196,6 +195,7 @@ Then specify dependency groups as follows:
 :::{literalinclude} ../examples/pure-hatch/pyproject.toml
 :language: toml
 :start-at: [project.optional-dependencies]
+:end-before: [tool.ruff]
 :::
 
 Following the above example, you install dependencies like this:
