@@ -2,19 +2,19 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="ja" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta property="og:title" content="Environment Managers for Python Packaging" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/package-structure-code/environment-managers.html" />
+<meta property="og:url" content="https://www.pyopensci.org/python-package-guide/maintain-automate/environment-managers.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
 <meta property="og:description" content="Environment and package managers: Package and environment managers are important tools in your Python packaging workflows. To make Your packaging experience when selecting a tool will be easier if ..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_package-structure-code_environment-managers_25100ebb.png" />
+<meta property="og:image" content="https://www.pyopensci.org/python-package-guide/_images/social_previews/summary_maintain-automate_environment-managers_25100ebb.png" />
 <meta property="og:image:alt" content="Environment and package managers: Package and environment managers are important tools in your Python packaging workflows. To make Your packaging experience when selecting a tool will be easier if ..." />
 <meta name="description" content="Environment and package managers: Package and environment managers are important tools in your Python packaging workflows. To make Your packaging experience when selecting a tool will be easier if ..." />
 <meta name="twitter:card" content="summary_large_image" />
@@ -53,22 +53,22 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/documentation_options.js?v=be13464f"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'package-structure-code/environment-managers';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'maintain-automate/environment-managers';</script>
     <script src="../_static/matomo.js?v=5a92784f"></script>
     <script src="../_static/language_select.js?v=a2e723a3"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/package-structure-code/environment-managers.html" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Publishing Your Package In A Community Repository: PyPI or Anaconda.org" href="publish-python-package-pypi-conda.html" />
-    <link rel="prev" title="Complex Python package builds" href="complex-python-package-builds.html" />
+    <link rel="canonical" href="https://www.pyopensci.org/python-package-guide/maintain-automate/environment-managers.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="prev" title="Task Runners for Python Packaging" href="task-runners.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="ja"/>
   <meta name="docsearch:version" content="" />
   </head>
   
@@ -77,12 +77,12 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">本文へスキップ</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>トップに戻る</button>
 
   
   <dialog id="pst-search-dialog">
@@ -105,7 +105,7 @@
   </dialog>
 
   <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="バージョン警告"></aside>
 </div>
 <aside class="bd-header-announcement" aria-label="Announcement">
   <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
@@ -114,7 +114,7 @@
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="サイトナビゲーション">
     <span class="fa-solid fa-bars"></span>
   </button>
   
@@ -156,35 +156,35 @@
     
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../tutorials/intro.html">
-    Tutorials
+    チュートリアル
   </a>
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="intro.html">
-    Packaging
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../documentation/index.html">
-    Documentation
+    ドキュメンテーション
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../tests/index.html">
-    Tests
+    テスト
   </a>
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
-    CI/CD
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Maintain
   </a>
 </li>
 
@@ -231,16 +231,16 @@
           <select class="dropdown" id="language-selector" aria-label="Choose a language">
   
 <option
-  value="/python-package-guide/package-structure-code/environment-managers.html"
+  value="/python-package-guide/ja/maintain-automate/environment-managers.html"
   selected
 >
-  en
+  ja
 </option>
 <option
-  value="/python-package-guide/ja/package-structure-code/environment-managers.html"
+  value="/python-package-guide/maintain-automate/environment-managers.html"
   
 >
-  ja
+  en
 </option>
 </select>
         </div>
@@ -248,7 +248,7 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
         </div>
@@ -257,8 +257,8 @@
         <div class="navbar-item">
 
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
       
@@ -298,30 +298,30 @@
     <div class="navbar-persistent--mobile"><select class="dropdown" id="language-selector" aria-label="Choose a language">
   
 <option
-  value="/python-package-guide/package-structure-code/environment-managers.html"
+  value="/python-package-guide/ja/maintain-automate/environment-managers.html"
   selected
 >
-  en
+  ja
 </option>
 <option
-  value="/python-package-guide/ja/package-structure-code/environment-managers.html"
+  value="/python-package-guide/maintain-automate/environment-managers.html"
   
 >
-  ja
+  en
 </option>
 </select>
     </div>
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
     </div>
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="このページでは">
       <span class="fa-solid fa-outdent"></span>
     </button>
   
@@ -353,35 +353,35 @@
     
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../tutorials/intro.html">
-    Tutorials
+    チュートリアル
   </a>
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="intro.html">
-    Packaging
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../package-structure-code/intro.html">
+    パッケージング
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../documentation/index.html">
-    Documentation
+    ドキュメンテーション
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../tests/index.html">
-    Tests
+    テスト
   </a>
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../continuous-integration/index.html">
-    CI/CD
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Maintain
   </a>
 </li>
 
@@ -419,8 +419,8 @@
           <div class="navbar-item">
 
 <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="ライト"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="ダーク"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
         
@@ -459,28 +459,14 @@
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 <nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Create &amp; Build Your Package</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-structure.html">Python package structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyproject-toml-python-package-metadata.html">pyproject.toml Package Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-distribution-files-sdist-wheel.html">Build Your Package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="declare-dependencies.html">Declare dependencies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-build-tools.html">Package Build Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="complex-python-package-builds.html">Complex Builds</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools to manage your package</span></p>
+     aria-label="セクションナビゲーション">
+  <p class="bd-links__title" role="heading" aria-level="1">セクションナビゲーション</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Maintain &amp; Automate</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ci.html">What is CI?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task-runners.html">Task runners</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Environment Managers for Python Packaging</a></li>
 
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Publish your package</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="publish-python-package-pypi-conda.html">Publish with Conda / PyPI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-package-versions.html">Package versions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-style-linting-format.html">Code style</a></li>
 </ul>
 </div>
 </nav></div>
@@ -513,16 +499,16 @@
       
         <div class="header-article-item">
 
-<nav aria-label="Breadcrumb" class="d-print-none">
+<nav aria-label="パンくずリスト" class="d-print-none">
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="../index.html" class="nav-link" aria-label="Home">
+      <a href="../index.html" class="nav-link" aria-label="ホーム">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro.html" class="nav-link">Python Package Structure</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Automate Workflows and Maintain Your Package</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Environment Managers for Python Packaging</span></li>
   </ul>
@@ -550,7 +536,7 @@
 <li><p><strong>Python-only, want speed?</strong> → <strong>uv</strong> (recommended)</p></li>
 <li><p><strong>Installing CLI tools globally?</strong> → pipx</p></li>
 <li><p><strong>Need conda packages or cross-language dependencies?</strong> → <strong>pixi</strong> (recommended) or conda/mamba</p></li>
-<li><p><strong>Creating a Python package?</strong> → Use Hatch – with UV as a dependency manager</p></li>
+<li><p><strong>Creating a Python package?</strong> → Use Hatch -- with UV as a dependency manager</p></li>
 </ul>
 <p>You can mix tools! For example, use <strong>pipx</strong> to install tools you use often (at the command line) like Hatch, ruff or pre-commit, then use <strong>uv</strong> within your projects for package and environment management.</p>
 </div>
@@ -563,13 +549,13 @@ Your packaging experience when selecting a tool will be easier if you understand
 <li><p>A <strong>package manager</strong> is used to install, update, and remove Python packages (libraries and tools) and their dependencies in your environment. When you use a package manager, you are often downloading packages from a repository like PyPI (Python Package Index) or a local repository like GitHub / GitLab.</p></li>
 </ol>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When you run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code>, pip acts as a package manager and installs numpy from PyPI. Pip’s default repository when you install a package is PyPI, but it can be used to install packages from other repositories such as GitHub.</p>
+<p class="admonition-title">注釈</p>
+<p>When you run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code>, pip acts as a package manager and installs numpy from PyPI. Pip's default repository when you install a package is PyPI, but it can be used to install packages from other repositories such as GitHub.</p>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>An <strong>environment manager</strong> creates isolated spaces (environments) for your Python projects. Each environment has its own Python installation and its own installed packages. Using isolated environments for different projects reduces the change of environment conflicts when using the same environment across different projects with different dependencies.</p></li>
 </ol>
-<p>There are many tools listed below, but if you’re short on time, you may want to consider</p>
+<p>There are many tools listed below, but if you're short on time, you may want to consider</p>
 <ol class="arabic simple">
 <li><p>Hatch combined with UV if you are managing a Python package. <a class="reference internal" href="../tutorials/create-python-package.html#create-pure-python-package"><span class="std std-ref">Check out our tutorials for more on this workflow.</span></a></p></li>
 <li><p>Pixi or mamba as faster alternatives to conda if you are working in the non-Pure Python packaging space.</p></li>
@@ -604,7 +590,7 @@ Your packaging experience when selecting a tool will be easier if you understand
 <td><p>Python</p></td>
 <td><p>Slower</p></td>
 <td><p>N/A (uses existing environment)</p></td>
-<td><p>Python’s standard package installer. pip also builds packages</p></td>
+<td><p>Python's standard package installer. pip also builds packages</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>pipx</strong></p></td>
 <td><p>Package manager</p></td>
@@ -625,7 +611,7 @@ Your packaging experience when selecting a tool will be easier if you understand
 <td><p>Python</p></td>
 <td><p>Slower</p></td>
 <td><p>Current working directory</p></td>
-<td><p>Python’s built-in environment creator</p></td>
+<td><p>Python's built-in environment creator</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>virtualenv</strong></p></td>
 <td><p>Environment manager</p></td>
@@ -685,7 +671,7 @@ Your packaging experience when selecting a tool will be easier if you understand
 <section id="pip">
 <h3>pip<a class="headerlink" href="#pip" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Pip is Python’s standard package installer. It is included with Python by default.</p></li>
+<li><p>Pip is Python's standard package installer. It is included with Python by default.</p></li>
 <li><p>Pip is great for installing packages from PyPI and GitHub / GitLab into existing environments.</p></li>
 <li><p>It is also great for development if you want to install your package locally in editable mode.</p></li>
 </ul>
@@ -720,7 +706,7 @@ mamba<span class="w"> </span>install<span class="w"> </span>numpy
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注釈</p>
 <p>Conda and mamba also function as environment managers - see below!</p>
 </div>
 </section>
@@ -766,13 +752,13 @@ hatch with uv backend</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注釈</p>
 <p>Hatch acts as a task runner and can manage multiple environments that you define. It also handles project and dependency installation, making it ideal for package maintainers who want consistency across development tasks.</p>
 </div>
 </section>
 <section id="venv">
 <h3>venv<a class="headerlink" href="#venv" title="Link to this heading">#</a></h3>
-<p>venv is Python’s built-in environment creator (included with Python 3.3+).
+<p>venv is Python's built-in environment creator (included with Python 3.3+).
 It is best for simple pure Python projects. Because venv ships with Python, and it is used by Hatch, UV and other tools under the hood, it is the most widely used tool.</p>
 <p>Basic usage:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create environment</span>
@@ -792,7 +778,7 @@ pip<span class="w"> </span>install<span class="w"> </span>numpy
 <section id="virtualenv">
 <h3>virtualenv<a class="headerlink" href="#virtualenv" title="Link to this heading">#</a></h3>
 <p>virtualenv is a more feature-rich alternative to venv with better performance and additional options.
-It’s best for you if you need more control over your environments.</p>
+It's best for you if you need more control over your environments.</p>
 <p><strong>Basic usage:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install virtualenv first</span>
 pip<span class="w"> </span>install<span class="w"> </span>virtualenv
@@ -809,7 +795,7 @@ virtualenv<span class="w"> </span>.venv
 <h3>uv<a class="headerlink" href="#uv" title="Link to this heading">#</a></h3>
 <div class="tip admonition">
 <p class="admonition-title">pyOpenSci Recommends</p>
-<p>We recommend <strong>uv</strong> for fast, reliable Python package and environment management. It’s significantly faster than pip and easily handles both installing packages and creating environments.</p>
+<p>We recommend <strong>uv</strong> for fast, reliable Python package and environment management. It's significantly faster than pip and easily handles both installing packages and creating environments.</p>
 </div>
 <p>UV is a fast, Rust-based tool that replaces both pip and venv. It installs packages and creates virtual environments at lightning speed. UV is best for any pure Python project. Pixi is better if are working in the non-pure Python packaging space.</p>
 <p><strong>Basic usage:</strong></p>
@@ -876,7 +862,7 @@ mamba<span class="w"> </span>activate<span class="w"> </span>myenv
 <h3>pixi<a class="headerlink" href="#pixi" title="Link to this heading">#</a></h3>
 <div class="tip admonition">
 <p class="admonition-title">pyOpenSci Recommends</p>
-<p>For projects needing conda packages, we recommend <strong>pixi</strong> over conda/mamba. It’s faster, uses lock files for reproducibility, and works cross-platform.</p>
+<p>For projects needing conda packages, we recommend <strong>pixi</strong> over conda/mamba. It's faster, uses lock files for reproducibility, and works cross-platform.</p>
 </div>
 <p>Pixi is a modern, fast package and environment manager built on conda ecosystems. Similar to UV, Pixi uses lock files for reproducible environments. Pixi is best suited for scientific projects that require conda packages, teams that require exact reproducibility, or cross-platform development.</p>
 <p><strong>Basic usage:</strong></p>
@@ -897,7 +883,7 @@ pixi<span class="w"> </span>shell
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">注釈</p>
 <p>Pixi automatically creates a lock file (<code class="docutils literal notranslate"><span class="pre">pixi.lock</span></code>) ensuring everyone on your team gets identical environments.</p>
 </div>
 </section>
@@ -915,22 +901,13 @@ pixi<span class="w"> </span>shell
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="complex-python-package-builds.html"
-       title="previous page">
+       href="task-runners.html"
+       title="前のページ">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Complex Python package builds</p>
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">Task Runners for Python Packaging</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="publish-python-package-pypi-conda.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Publishing Your Package In A Community Repository: PyPI or Anaconda.org</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -947,7 +924,7 @@ pixi<span class="w"> </span>shell
 <div
     id="pst-page-navigation-heading-2"
     class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
+    <i class="fa-solid fa-list"></i> このページでは
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
@@ -982,12 +959,12 @@ pixi<span class="w"> </span>shell
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/python-package-guide/edit/main/package-structure-code/environment-managers.md">
+    <a href="https://github.com/pyopensci/python-package-guide/edit/main/maintain-automate/environment-managers.md">
       <i class="fa-solid fa-pencil"></i>
       
       
         
-          Edit on GitHub
+          GitHub の編集
         
       
     </a>
@@ -996,10 +973,10 @@ pixi<span class="w"> </span>shell
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
-    <h3>This Page</h3>
+    <h3>このページ</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/package-structure-code/environment-managers.md.txt"
-            rel="nofollow">Show Source</a></li>
+      <li><a href="../_sources/maintain-automate/environment-managers.md.txt"
+            rel="nofollow">ソースコードを表示</a></li>
     </ul>
    </div></div>
 
