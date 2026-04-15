@@ -42,7 +42,7 @@
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/pyos.css?v=6edf39ab" />
@@ -54,8 +54,8 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
@@ -464,6 +464,7 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Packaging Tutorial Setup</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="get-to-know-hatch.html">Get to know Hatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-python-scripts-hatch.html">Run standalone Python scripts with Hatch</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Create and publish a Python Package</span></p>
 <ul class="current nav bd-sidenav">
@@ -687,11 +688,11 @@ pull requests that update your action versions at whatever frequency you want.</
 <span class="w">    </span><span class="nt">permissions</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w"> </span><span class="c1"># this job only needs read access</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3</span><span class="w"> </span><span class="c1"># v6.0.0</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd</span><span class="w"> </span><span class="c1"># v6.0.2</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">persist-credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Setup Python</span>
-<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548</span><span class="w"> </span><span class="c1"># v6.1.0</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405</span><span class="w"> </span><span class="c1"># v6.2.0</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.12&quot;</span><span class="w"> </span><span class="c1"># Select the version that you want to build your package on</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upgrade pip, install Hatch, and check Hatch version</span>
@@ -782,11 +783,11 @@ the previous section:</p>
 <span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w"> </span><span class="c1"># this job needs read access</span>
 <span class="w">      </span><span class="nt">id-token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span><span class="w"> </span><span class="c1"># but also needs to be able to write the publishing token</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53</span><span class="w"> </span><span class="c1"># v6.0.0</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c</span><span class="w"> </span><span class="c1"># v8.0.1</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist.zip</span>
 <span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist/</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e</span><span class="w"> </span><span class="c1"># v1.13.0</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b</span><span class="w"> </span><span class="c1"># v1.14.0</span>
 </pre></div>
 </div>
 <div class="admonition-make-sure-to-change-the-url admonition">
@@ -890,11 +891,11 @@ trusted publishing and also does this is the following:</p>
 <span class="w">    </span><span class="nt">permissions</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w"> </span><span class="c1"># this job only needs read access</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3</span><span class="w"> </span><span class="c1"># v6.0.0</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd</span><span class="w"> </span><span class="c1"># v6.0.2</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">persist-credentials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Setup Python</span>
-<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548</span><span class="w"> </span><span class="c1"># v6.1.0</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405</span><span class="w"> </span><span class="c1"># v6.2.0</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.12&quot;</span><span class="w"> </span><span class="c1"># Select the version that you want to build your package on</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upgrade pip, install Hatch, and check Hatch version</span>
@@ -904,7 +905,7 @@ trusted publishing and also does this is the following:</p>
 <span class="w">          </span><span class="no">hatch --version # Verify that Hatch is installed</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build artifacts</span>
 <span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hatch build</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4</span><span class="w"> </span><span class="c1"># v5.0.0</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a</span><span class="w"> </span><span class="c1"># v7.0.1</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist/</span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist.zip</span>
@@ -922,11 +923,11 @@ trusted publishing and also does this is the following:</p>
 <span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span><span class="w"> </span><span class="c1"># this job needs read access</span>
 <span class="w">      </span><span class="nt">id-token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span><span class="w"> </span><span class="c1"># but also needs to be able to write the publishing token</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53</span><span class="w"> </span><span class="c1"># v6.0.0</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c</span><span class="w"> </span><span class="c1"># v8.0.1</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist.zip</span>
 <span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dist/</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e</span><span class="w"> </span><span class="c1"># v1.13.0</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b</span><span class="w"> </span><span class="c1"># v1.14.0</span>
 </pre></div>
 </div>
 <p>You can copy the above into your <code class="docutils literal notranslate"><span class="pre">release.yaml</span></code> file. You only need to update
@@ -1091,7 +1092,7 @@ the <code class="docutils literal notranslate"><span class="pre">url:</span></co
 
   <p class="copyright">
     
-      © Copyright 2025, pyOpenSci.
+      © Copyright 2026, pyOpenSci.
       <br/>
     
   </p>
